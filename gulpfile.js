@@ -7,7 +7,7 @@ gulp.task('default', ['compile'], function () {
   gulp.watch('./src/**/*.html', ['html'])
   gulp.watch('./src/**/*.tmpl', ['html'])
   gulp.watch('./src/css/*.css', ['style'])
-  gulp.watch('./src/js/**/*.js', ['script'])
+  gulp.watch('./src/js/**/*.js', ['script', 'script-with-angular'])
 })
 
-gulp.task('compile', ['init', 'html', 'style', 'script'])
+gulp.task('compile', ['init', 'html', 'style', 'script', 'script-with-angular'])
