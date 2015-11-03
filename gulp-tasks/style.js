@@ -6,7 +6,7 @@ var minifycss = require('gulp-minify-css')
 gulp.task('style', function () {
   return gulp.src([
     './bower_components/bootstrap/dist/css/bootstrap.css',
-    './src/scss/style.scss'
+    './src/css/**/*.css'
   ])
     .pipe(prefix('last 1 version', '> 1%', 'ie 10', 'ie 11', 'iOS 6', 'iOS 7', 'Android 4', {
       cascade: true
