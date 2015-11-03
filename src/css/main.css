@@ -1,0 +1,70 @@
+
+
+body,html {
+/*    width: 100%;*/
+    height: 100%;
+}
+.main{
+/*    height : 100%;*/
+}
+
+.logo-img{
+    margin : 0 auto;
+}
+
+.regisBtn{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+@media screen and (min-width:1px) and (max-width:992px){
+    .first-part{
+        height: 40%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .second-part{
+/*        display: flex;*/
+        margin-top:10%;
+        align-items: center;
+        height : 60%;
+        margin-left: 10px;
+        margin-right: 10px
+    }
+    
+    .sqr{
+        background-color: rgba(153,163,122, 0.3);
+        margin-top : 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.sqr{
+    display: flex;
+    align-items: center;
+}
+@media (min-width:992px){
+    .first-part{
+        height:75%;
+        display: flex;
+        align-items: center;
+    }
+
+    .second-part{
+        height:25%;
+    }
+    
+    .sqr{
+        background-color: rgba(153,163,122, 0.3);
+        height:100%;
+    }
+}
+
+
+
+.X{
+    width :100%;
+    height:100%;
+}

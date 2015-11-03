@@ -1,0 +1,50 @@
+.gold{
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 6px ridge #d9ca43;
+    background-color: #FFFFFF;
+}
+body{
+    background-color: #FFF;
+}
+.silver{
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 6px ridge #857e85;
+    background-color: #FFFFFF;
+}
+
+.bronze{
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 6px ridge #b86f47;
+    background-color: #FFFFFF;
+}
+
+img {
+    padding: 10px;
+    margin: 10px;
+}
+
+.VIP-banner{
+/*    background-color: #f0e6b1;*/
+}
+
+.silver-banner{
+/*    background-color: #f4f1e2;*/
+}
+
+.bronze-banner{
+/*    background-color: rgba(184, 111, 71, 0.42);*/
+}
+
+.sponsors-section .container{
+    padding-top: 70px;
+}
+
+.sponsors-section{
+    background-color: #f4f1e2;
+}
