@@ -15,6 +15,7 @@
     $scope.interests = [];
     $scope.filter = {'selected': []};
     $scope.find = function(obj, filter){
+      console.log(filter);
       if(filter.length === 0){
         return obj;
       }
