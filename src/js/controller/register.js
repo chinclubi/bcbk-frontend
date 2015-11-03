@@ -8,7 +8,6 @@
   RegisterController.$inject = ['$scope']
   function RegisterController ($scope) {
     var self = this;
-    console.log("HER");
   }
 
 })()

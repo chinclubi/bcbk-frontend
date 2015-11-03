@@ -21,7 +21,12 @@
         templateUrl: 'templates/register.html',
         controller: 'RegisterController',
         controllerAs: 'RegisterCtrl',
-
+      })
+      .state('whoscoming', {
+        url: '/whoscoming',
+        templateUrl: 'templates/whoscoming.html',
+        controller: 'WhoscomingController',
+        controllerAs: 'WhoscomingCtrl',
       })
   }
 })()
