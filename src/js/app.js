@@ -4,8 +4,8 @@
   angular
     .module('bcbk-app', [
       'services.route',
-      'controller.homepage'
-    // 'controller.register',
+      'controller.homepage',
+      'controller.register',
     // 'directive.navbar'
     ])
 })()

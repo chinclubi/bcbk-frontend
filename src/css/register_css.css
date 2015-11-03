@@ -3,12 +3,12 @@ html{
 }
 
 .regisHead {
-    background-image: url("../images/main-bg.jpg");
+    background-image: url("../img/main-bg.jpg");
     background-size: cover;
     background-position: center;
     height: 200px;
     margin-top: -20px;
-    
+
 }
 
 .regisHead h1{
@@ -34,7 +34,7 @@ html{
 
 .regisContent input{
     border-color: white;
-    
+
 }
 
 .regisContent[name="shirt-size"] {

@@ -7,7 +7,7 @@ gulp.task('script', function () {
     './bower_components/jquery/dist/jquery.js',
     './src/js/**/*.js'])
     .pipe(concat('scripts.js'))
-    .pipe(uglify({mangle: false}))
+    // .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./www/js'))
 })
 
@@ -18,6 +18,6 @@ gulp.task('script-with-angular', function () {
     './bower_components/angular-ui-router/release/angular-ui-router.js',
     './src/js/**/*.js'])
     .pipe(concat('scripts-with-angular.js'))
-    .pipe(uglify({mangle: false}))
+    // .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./www/js'))
 })
