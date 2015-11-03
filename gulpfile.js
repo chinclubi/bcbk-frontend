@@ -6,7 +6,7 @@ requireDir('./gulp-tasks')
 gulp.task('default', ['compile'], function () {
   gulp.watch('./src/**/*.html', ['html'])
   gulp.watch('./src/**/*.tmpl', ['html'])
-  gulp.watch('./src/scss/*.scss', ['style'])
+  gulp.watch('./src/css/*.css', ['style'])
   gulp.watch('./src/js/**/*.js', ['script'])
 })
 
