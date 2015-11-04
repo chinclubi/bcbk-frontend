@@ -28,5 +28,11 @@
         controller: 'WhoscomingController',
         controllerAs: 'WhoscomingCtrl',
       })
+      .state('edituser', {
+        url: '/edituser',
+        templateUrl: 'templates/edituser.html',
+        controller: 'EditUserController',
+        controllerAs: 'EditUserCtrl',
+      })
   }
 })()

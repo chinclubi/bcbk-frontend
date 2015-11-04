@@ -2,6 +2,10 @@ html{
     background-color: #e8e8e8;
 }
 
+.box-content {
+  min-height:100vh;
+}
+
 .regisHead {
     background-image: url("../img/main-bg.jpg");
     background-size: cover;
@@ -32,8 +36,10 @@ html{
     font-size: 16px;
 }
 
-.regisContent input{
+.regisContent input, .input-group-addon, .input-group{
+    /*
     border-color: white;
+    */
 
 }
 
