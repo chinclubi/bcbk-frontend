@@ -70,13 +70,8 @@ body,html {
 }
 
 .vcenter{
-    display: inline-block;
-    vertical-align: bottom;
-    float: none;
-    max-height: 25%;
     background: white;
 }
 
 .containblock{
-    max-height: 200px;
 }
