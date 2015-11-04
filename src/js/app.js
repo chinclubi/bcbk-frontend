@@ -7,6 +7,7 @@
       'controller.homepage',
       'controller.register',
       'controller.whoscoming',
+      'controller.edituser',
     // 'directive.navbar'
     ])
 })()

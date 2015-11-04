@@ -1,7 +1,6 @@
-<div ng-controller="RegisterController">
 <div class="box-content">
   <div class="regisHead">
-     <h1>REGISTER</h1>
+     <h1>Edit Your Profile</h1>
   </div>
   <div class="regisContent">
       <div class="inform">
@@ -46,7 +45,7 @@
                       <label>Email</label>
                   </div>
                   <div class="col-sm-4">
-                      <input type="email" class="form-control" id="email">
+                      <input type="email" class="form-control" id="email" disabled>
                   </div>
 
                   <div class="col-sm-4 col-sm-offset-2">
@@ -107,7 +106,7 @@
                   </div>
               </div>
               <div class="button-wrap">
-                  <button class="regis-btn hvr-fade">REGISTER</button>
+                  <button class="regis-btn hvr-fade">Update</button>
               </div>
           </div>
       </div>
@@ -131,8 +130,7 @@
       </div>
       <div class="row">
           <br><br>
-          <button class="btn btn-default btn-lg outline btn-back hvr-fade" role="button" ng-click="backToRegister()">BACK</button>
+          <button class="btn btn-default btn-lg outline btn-back hvr-fade" role="button" ng-click="backToEditUser()">BACK</button>
       </div>
   </div>
-</div>
 </div>
