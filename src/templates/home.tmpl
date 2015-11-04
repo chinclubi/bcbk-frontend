@@ -20,13 +20,18 @@
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" ui-sref="whoscoming">
-                    <p class="nav-link-text">Who's Coming</p>
+                    <a class="page-scroll" href="#sponsors">
+                    <p class="nav-link-text">Sponsors</p>
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#sponsors">
-                    <p class="nav-link-text">Sponsors</p>
+                    <a class="page-scroll" href="#register">
+                    <p class="nav-link-text">Register</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="whoscoming({reload:true})">
+                    <p class="nav-link-text">Who's Coming</p>
                     </a>
                 </li>
             </ul>
@@ -37,12 +42,11 @@
 <section id="main" class="main-section main">
       <div class="container">
           <div class="padding">
-            <div class="col-xs-1 col-sm-1 col-md-4"></div>
-            <div class="col-xs-9 col-sm-9 col-md-4 col2">
-              <img src="img/bcbk-logo.png" class="img-responsive">
-
+          <div class="col-xs-1 col-sm-1 col-md-4"></div>
+          <div class="col-xs-9 col-sm-9 col-md-4 col2">
+               <img src="img/bcbk-logo.png" class="img-responsive">
               <div class="row">
-                <a role="button" class="registerBtn btn btn-lg" ui-sref="register({reload:true})">REGISTER</a>
+                 <a role="button" class="page-scroll registerBtn" href="#register">REGISTER</a>
               </div>
             </div>
             <div class="col-xs-1 col-sm-1 col-md-4"></div>
@@ -226,7 +230,7 @@
         </div>
         </div>
 
-        
+
 
         <div class = "container">
             <div class = "row">
@@ -348,8 +352,8 @@
             <div class=" col-md-6 col-sm-12">
               <div class="center-block">
                 <img class="img-rounded img-responsive vcenter center-block" src="img/Glazziq.svg" >
-              </div> 
-            </div>                
+              </div>
+            </div>
           </div>
         </div>
 
@@ -364,10 +368,10 @@
               <div class="center-block">
                 <img class="img-rounded img-responsive vcenter center-block" src="img/Playable.svg" >
               </div>
-            </div> 
+            </div>
           </div>
         </div>
-       
+
 <!--        </div>-->
 
         <div class="row">
@@ -410,7 +414,11 @@
         </div>
   </div>
 <!--        </div>-->
-</div>
+  </div>
+</section>
+
+
+<section id="register" class="register-section" ng-include src="'templates/register.html'">
 </section>
 <script>
     $( document ).ready(function() {
@@ -441,3 +449,4 @@ $(window).resize(resizeFunction);
 
 });
 </script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
