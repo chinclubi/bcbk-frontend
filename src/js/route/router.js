@@ -16,12 +16,12 @@
         controller: 'HomePageController',
         controllerAs: 'homepageCtrl'
       })
-      .state('register', {
-        url: '/register',
-        templateUrl: 'templates/register.html',
-        controller: 'RegisterController',
-        controllerAs: 'RegisterCtrl',
-      })
+      // .state('register', {
+      //   url: '/register',
+      //   templateUrl: 'templates/register.html',
+      //   controller: 'RegisterController',
+      //   controllerAs: 'RegisterCtrl',
+      // })
       .state('whoscoming', {
         url: '/whoscoming',
         templateUrl: 'templates/whoscoming.html',
