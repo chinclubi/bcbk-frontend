@@ -9,6 +9,7 @@ div{
     width : 100%;
     background-size: cover; 
     background-image: url("../img/main-bg.jpg");
+    max-height: 100vh;
 }
 
 .container{
@@ -16,23 +17,20 @@ div{
 }
 
 .main-section .container{
-    width: 100%;
-    padding-left: 0px;
-    padding-right:0px;
+    width:auto;
 }
 .main-section .bigRow{
-    height : 25%;
     margin-left : 10px;
     margin-right : 10px;
     margin-top : 0px;
     margin-bottom : 0px;
 }
 
-.footSqr, .main-section .padding{
-    display: flex;
-    align-items : center;
-    justify-content: center;
+.main-section .logo{
+    max-height: 70%;
+    padding-bottom: 2.5%;
 }
+
 .subFootSqrIcon{
 }
 .subFootSqrIcon, .main-section .padding .col-md-4{
@@ -45,8 +43,8 @@ div{
     width:220px;
 }
 .footSqr .row{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 5%;
+    padding-bottom: 5%;
     max-height: 50%;
     display: flex;
     align-items : center;
