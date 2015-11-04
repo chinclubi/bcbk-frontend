@@ -43,8 +43,8 @@ div{
     width:220px;
 }
 .footSqr .row{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
     max-height: 50%;
     display: flex;
     align-items : center;
