@@ -29,7 +29,7 @@
         controllerAs: 'WhoscomingCtrl',
       })
       .state('edituser', {
-        url: '/edituser',
+        url: '/edit?email&code',
         templateUrl: 'templates/edituser.html',
         controller: 'EditUserController',
         controllerAs: 'EditUserCtrl',
