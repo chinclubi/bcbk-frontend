@@ -23,7 +23,7 @@
       var food_reqE = $('#food-requirement');
       var food_allergyE = $('#allergy');
       var interestE = $('#interest');
-      var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE, food_allergyE, interestE]
+      var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE, interestE]
 
       $('.regis-btn').click(function () {
         var isEmpty = false
@@ -43,7 +43,7 @@
           var workplacex = workplaceE.val()
           var emailx = emailE.val()
           var twitterx = twitterE.val()
-          var websitex = emailE.val()
+          var websitex = websiteE.val()
           var food_reqx = food_reqE.val()
           var food_allergyx = food_allergyE.val()
           var interestx = interestE.val()
@@ -59,7 +59,7 @@
             website: websitex,
             food_req: food_reqx,
             food_allergy: food_allergyx,
-            interest: interestx
+            interests: interestx
           }
           regisContent.fadeOut();
           // successForm.fadeIn()
