@@ -1,23 +1,4 @@
 
-
-body,html {
-/*    width: 100%;*/
-    height: 100%;
-}
-.main{
-/*    height : 100%;*/
-}
-
-.logo-img{
-    margin : 0 auto;
-}
-
-.regisBtn{
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
-}
-
 @media screen and (min-width:1px) and (max-width:992px){
     .first-part{
         height: 40%;
@@ -78,6 +59,14 @@ body,html {
   padding-bottom: 20px;
 }
 
+p{
+  font-size: 1.25em;
+}
+
 .whatIs p{
   font-weight: bold;
+}
+
+.whatIs h1{
+  padding-bottom: 20px;
 }
