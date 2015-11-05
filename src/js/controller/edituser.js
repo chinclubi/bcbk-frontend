@@ -23,12 +23,12 @@
           $('#gender').val(response.data.gender);
           $('#profession').val(response.data.profession);
           $('#workplace').val(response.data.workplace);
-          $('#email').val(response.data.email);
+          $('#email').val(urlEmail);
           $('#twitter').val(response.data.twitter);
           $('#website').val(response.data.website);
           $('#food-requirement').val(response.data.food_req);
           $('#allergy').val(response.data.food_allergy);
-          $('#interest').val(response.data.interest);
+          $('#interest').val(response.data.interests);
         }
         else {
           $location.path( "/home" );
@@ -49,7 +49,7 @@
         var food_reqE = $('#food-requirement');
         var food_allergyE = $('#allergy');
         var interestE = $('#interest');
-        var elementArr = [firstnameE,lastnameE,genderE,professionE,workplaceE,emailE,food_reqE,food_allergyE,interestE];
+        var elementArr = [firstnameE,lastnameE,genderE,professionE,workplaceE,emailE,food_reqE,interestE];
 
 
         $('.regis-btn').click(function(){
@@ -70,7 +70,7 @@
                 var workplacex = workplaceE.val();
                 var emailx = emailE.val();
                 var twitterx = twitterE.val();
-                var websitex = emailE.val();
+                var websitex = websiteE.val();
                 var food_reqx = food_reqE.val();
                 var food_allergyx = food_allergyE.val();
                 var interestx = interestE.val();
@@ -86,7 +86,7 @@
                   website : websitex,
                   food_req : food_reqx,
                   food_allergy : food_allergyx,
-                  interest : interestx,
+                  interests : interestx,
                   unique_code : urlCode,
                 };
 
