@@ -5,14 +5,39 @@
     .module('controller.edituser', [])
     .controller('EditUserController', EditUserController)
 
-  EditUserController.$inject = ['$scope']
-  function EditUserController ($scope) {
+  EditUserController.$inject = ['$scope', '$stateParams', '$http', '$location']
+  function EditUserController ($scope, $stateParams, $http, $location) {
+    var urlEmail = $stateParams.email;
+    var urlCode = $stateParams.code;
     var self = this;
+    var regisContent = $('.regisContent');
     var successForm = $('.regisSuccess');
     successForm.hide();
     $(document).ready(function(){
 
-        var regisContent = $('.regisContent');
+      var apiURL = "http://api.barcampbangkhen.org/valid?";
+      $http.get(apiURL + 'email=' + urlEmail + '&unique_code=' + urlCode).success(function(response){
+        if(response.allow == true){
+          $('#firstname').val(response.data.firstname);
+          $('#lastname').val(response.data.lastname);
+          $('#gender').val(response.data.gender);
+          $('#profession').val(response.data.profession);
+          $('#workplace').val(response.data.workplace);
+          $('#email').val(urlEmail);
+          $('#twitter').val(response.data.twitter);
+          $('#website').val(response.data.website);
+          $('#food-requirement').val(response.data.food_req);
+          $('#allergy').val(response.data.food_allergy);
+          $('#interest').val(response.data.interests);
+        }
+        else {
+          $location.path( "/home" );
+        }
+    	}).error(function (data, status){
+                console.log("Error status : " + status);
+                $location.path( "/home" );
+            });
+
         var firstnameE = $('#firstname');
         var lastnameE = $('#lastname');
         var genderE = $('#gender');
@@ -21,16 +46,13 @@
         var emailE = $('#email');
         var twitterE = $('#twitter');
         var websiteE = $('#website');
-        var sizeE = $('#shirt-size');
         var food_reqE = $('#food-requirement');
         var food_allergyE = $('#allergy');
         var interestE = $('#interest');
-        var elementArr = [firstnameE,lastnameE,genderE,professionE,workplaceE,emailE,sizeE,food_reqE,food_allergyE,interestE];
+        var elementArr = [firstnameE,lastnameE,genderE,professionE,workplaceE,emailE,food_reqE,interestE];
+
 
         $('.regis-btn').click(function(){
-          console.log(twitterE.val());
-          console.log(websiteE.val());
-          console.log(genderE.val());
             var isEmpty = false;
             for(var i =0;i<elementArr.length;i++){
                 if(elementArr[i].val()==""){
@@ -48,38 +70,41 @@
                 var workplacex = workplaceE.val();
                 var emailx = emailE.val();
                 var twitterx = twitterE.val();
-                var websitex = emailE.val();
-                var sizex = sizeE.val();
+                var websitex = websiteE.val();
                 var food_reqx = food_reqE.val();
                 var food_allergyx = food_allergyE.val();
                 var interestx = interestE.val();
 
-                        regisContent.fadeOut();
-                        successForm.fadeIn();
-                $.post(
-                    "http://barcampbangkhen.org/2015/php/save_user.php",
-                    {
-                        firstname : firstnamex,
-                        lastname : lastnamex,
-                        gender : genderx,
-                        profession : professionx,
-                        workplace : workplacex,
-                        email : emailx,
-                        twitter : twitterx,
-                        website : websitex,
-                        size : sizex,
-                        food_req : food_reqx,
-                        food_allergy : food_allergyx,
-                        interest : interestx
+                var sendingData = {
+                  firstname : firstnamex,
+                  lastname : lastnamex,
+                  gender : genderx,
+                  profession : professionx,
+                  workplace : workplacex,
+                  email : emailx,
+                  twitter : twitterx,
+                  website : websitex,
+                  food_req : food_reqx,
+                  food_allergy : food_allergyx,
+                  interests : interestx,
+                  unique_code : urlCode,
+                };
 
-                    },
-                    function(data){
-                    }
-                );
+                regisContent.fadeOut();
+
+                $.post(
+                  'http://api.barcampbangkhen.org/edit', sendingData,
+                  function (data) {
+                    console.log(data)
+                    successForm.fadeIn();
+                  }
+                ).fail(function (data) {
+                  console.log(data)
+                })
+
             }
 
     $scope.backToEditUser = function() {
-      console.log("BLAH");
       regisContent.fadeIn();
       successForm.fadeOut();
     };
