@@ -5,8 +5,10 @@
     .module('controller.edituser', [])
     .controller('EditUserController', EditUserController)
 
-  EditUserController.$inject = ['$scope']
-  function EditUserController ($scope) {
+  EditUserController.$inject = ['$scope', '$stateParams']
+  function EditUserController ($scope, $stateParams) {
+    console.log($stateParams.email);
+    console.log($stateParams.code);
     var self = this;
     var successForm = $('.regisSuccess');
     successForm.hide();

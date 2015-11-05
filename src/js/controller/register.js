@@ -5,8 +5,8 @@
     .module('controller.register', [])
     .controller('RegisterController', RegisterController)
 
-  RegisterController.$inject = ['$scope']
-  function RegisterController ($scope) {
+  RegisterController.$inject = ['$scope', '$http']
+  function RegisterController ($scope, $http) {
     var self = this;
     var successForm = $('.regisSuccess');
     successForm.hide();
@@ -28,9 +28,6 @@
       var elementArr = [firstnameE,lastnameE,genderE,professionE,workplaceE,emailE,sizeE,food_reqE,food_allergyE,interestE];
 
       $('.regis-btn').click(function(){
-        console.log(twitterE.val());
-        console.log(websiteE.val());
-        console.log(genderE.val());
           var isEmpty = false;
           for(var i =0;i<elementArr.length;i++){
               if(elementArr[i].val()==""){
@@ -54,26 +51,37 @@
               var food_allergyx = food_allergyE.val();
               var interestx = interestE.val();
 
-                      regisContent.fadeOut();
-                      successForm.fadeIn();
-              $.post(
-                  "http://barcampbangkhen.org/2015/php/save_user.php",
-                  {
-                      firstname : firstnamex,
-                      lastname : lastnamex,
-                      gender : genderx,
-                      profession : professionx,
-                      workplace : workplacex,
-                      email : emailx,
-                      twitter : twitterx,
-                      website : websitex,
-                      size : sizex,
-                      food_req : food_reqx,
-                      food_allergy : food_allergyx,
-                      interest : interestx
+              var sendingData = {
+                firstname : firstnamex,
+                lastname : lastnamex,
+                gender : genderx,
+                profession : professionx,
+                workplace : workplacex,
+                email : emailx,
+                twitter : twitterx,
+                website : websitex,
+                size : sizex,
+                food_req : food_reqx,
+                food_allergy : food_allergyx,
+                interest : interestx
+              };
 
-                  },
+              regisContent.fadeOut();
+              //successForm.fadeIn();
+
+              // $http.post('http://api.barcampbangkhen.org/register', sendingData).then(function(response){
+              //   successForm.fadeIn();
+        			// }, function(xhr){
+        			// 		console.log(xhr.data);
+        			// });
+
+
+
+              $.post(
+                  "http://api.barcampbangkhen.org/register", sendingData,
                   function(data){
+                    console.log(data);
+                    successForm.fadeIn();
                   }
               );
           }
