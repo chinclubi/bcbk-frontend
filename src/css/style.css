@@ -3,7 +3,7 @@
     src: url(../fonts/tivanon.woff);
 }
 div{
-    font-family: myFont;
+    font-family: 'Open Sans';
 }
 .main-section{
     width : 100%;
@@ -69,7 +69,8 @@ div{
 }
 
 .main .registerBtn:hover{
-    opacity: 0.5;
+    color: #141111;
+    background-color: #e8e8e8;
 }
 
 .main .fa{
@@ -112,11 +113,13 @@ div{
     margin: 0 auto;
     padding-left: 1em;
     padding-right: 1em;
-    padding-top : 0.5em;
-    padding-bottom: 0.5em;
+    padding-top : 0.125em;
+    padding-bottom: 0.125em;
 
     background-color : transparent;
     color : white;
     font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
     border : 2px solid white;
 }
