@@ -76,6 +76,17 @@
         }
 
         $scope.backToRegister = function () {
+          $('#firstname').val("");
+          $('#lastname').val("");
+          $('#gender').val("Male");
+          $('#profession').val("");
+          $('#workplace').val("");
+          $('#email').val("");
+          $('#twitter').val("");
+          $('#website').val("");
+          $('#food-requirement').val("None");
+          $('#allergy').val("");
+          $('#interest').val("");
           regisContent.fadeIn()
           successForm.fadeOut()
         }
