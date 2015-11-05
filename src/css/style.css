@@ -1,81 +1,96 @@
 @font-face {
-    font-family : myFont;
+    font-family: myFont;
     src: url(../fonts/tivanon.woff);
 }
-div{
+
+div {
     font-family: 'Open Sans';
 }
-.main-section{
-    width : 100%;
+
+body {
+    width: 100%;
+    background: fixed url("../img/main-bg.jpg");
+    background-size: cover;
+}
+
+img {
+    padding: 0;
+}
+
+.main-section {
+    width: 100%;
     background-size: cover;
     background-image: url("../img/main-bg.jpg");
     max-height: 100vh;
 }
 
-.container{
-    max-width: 1200px;
+.container {
+    max-width: 900px;
 }
 
-.main-section .container{
-    width:auto;
-}
-.main-section .bigRow{
-    margin-left : 10px;
-    margin-right : 10px;
-    margin-top : 0px;
-    margin-bottom : 0px;
+.main-section .container {
+    width: auto;
 }
 
-.main-section .logo{
+.main-section .bigRow {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.main-section .logo {
     max-height: 70%;
     padding-bottom: 2.5%;
 }
 
-.subFootSqrIcon{
+.subFootSqrIcon {
 }
-.subFootSqrIcon, .main-section .padding .col-md-4{
+
+.subFootSqrIcon, .main-section .padding .col-md-4 {
     max-width: 50%;
 }
 
-.subFootSqr{
+.subFootSqr {
     max-height: 50%;
     padding-top: 10px;
-    width:220px;
+    width: 220px;
 }
-.footSqr .row{
+
+.footSqr .row {
     padding-top: 2.5%;
     padding-bottom: 2.5%;
     max-height: 50%;
     display: flex;
-    align-items : center;
+    align-items: center;
     justify-content: center;
-/*    height: 100%;  */
+    /*    height: 100%;  */
 }
 
-
-.nav-brand-text{
+.nav-brand-text {
     font-size: 1.3em;
-    color : white;
+    color: white;
     font-weight: bolder;
 }
 
-.nav-link-text{
-    color : white;
-}
-.footSqr{
-    height : 60%;
-/*    width: 100%;*/
-    background-color: rgba(153,163,122, 0.3)
+.nav-link-text {
+    color: white;
 }
 
-.main .registerBtn:hover{
+.footSqr {
+    height: 60%;
+    /*    width: 100%;*/
+    background-color: rgba(153, 163, 122, 0.3)
+}
+
+.main .registerBtn:hover {
     color: #141111;
-    background-color: #e8e8e8;
+    background-color: #141111;
 }
 
-.main .fa{
+.main .fa {
     color: #f0e6b1;
-/*    font-size: 4em;*/
+    /*    font-size: 4em;*/
 }
 
 @media screen and (max-width: 299px) {
@@ -96,30 +111,99 @@ div{
     }
 }
 
-.col2{
-/*    display: block;*/
+.col2 {
+    /*    display: block;*/
 }
-.main .text{
+
+.main .text {
     font-size: 1em;
     font-style: normal;
     font-weight: bolder;
     max-height: 50%;
-    color : white;
+    color: white;
 }
 
-.main .registerBtn{
-    width:100%;
+.main .registerBtn {
+    height: 100%;
+    width: 100%;
     max-width: 70%;
-    margin: 0 auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top : 0.125em;
-    padding-bottom: 0.125em;
+    padding: 0.1em 0.5em;
 
-    background-color : transparent;
-    color : white;
-    font-size: 2em;
-    font-weight: bold;
+    background-color: transparent;
+    color: #e8e8e8;
+    font-size: 2.4em;
+    font-weight: 600;
     text-decoration: none;
-    border : 2px solid white;
+    border: 2px solid white;
+}
+
+/*//------------------------------------------*/
+
+.cover {
+    text-align: center;
+}
+
+.cover .row {
+    margin-bottom: 5%;
+}
+
+.cover .logo .img {
+    padding: 0;
+    margin: 0;
+}
+
+.cover .white-btn {
+    height: 100%;
+    width: 100%;
+    max-width: 70%;
+    padding: 0.1em 0.5em;
+
+    background-color: transparent;
+    color: #e8e8e8;
+    font-size: 2.4em;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #e8e8e8;
+}
+
+.cover .white-btn:hover {
+    color: #141111;
+    background-color: #e8e8e8;
+}
+
+.cover .quick-info {
+    height: 100%;
+    color: #e8e8e8;
+    font-size: 1.2em;
+    background-color: rgba(181, 214, 170, 0.28)
+}
+
+.cover .quick-info .row {
+    margin-bottom: 0;
+    padding: 1.4em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover .fa {
+    color: #f0e6b1;
+}
+
+@media screen and (max-width: 299px) {
+    .cover .fa {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 799px) {
+    .cover .fa {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .cover .fa {
+        font-size: 4em;
+    }
 }

@@ -1,9 +1,9 @@
 .header {
     background-image: url(background-header.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
-    font-family:  monospace;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: monospace;
     text-align: center;
     font-weight: bold;
     color: white;
@@ -19,7 +19,7 @@ body {
     background-color: #e8e8e8;
 }
 
-h2,h5 {
+h2, h5 {
     font-weight: bold;
 }
 
@@ -30,8 +30,9 @@ h2,h5 {
 .btn.outline {
     background: none;
     padding: 12px 22px;
-     border-radius:0;
+    border-radius: 0;
 }
+
 .btn-default.outline {
     border: 2px solid #000000;
     color: black;

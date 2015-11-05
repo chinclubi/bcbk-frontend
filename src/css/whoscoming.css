@@ -1,14 +1,16 @@
-.who{
-	width: 100%;
-	border-collapse: collapse;
-	margin: 10px 0;
-	table-layout: fixed;
-	overflow: hidden;
+.who {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    table-layout: fixed;
+    overflow: hidden;
 }
-.who th, .who td{
-	border: #b9b9b9 solid 1px;
-	padding: 5px;
+
+.who th, .who td {
+    border: #b9b9b9 solid 1px;
+    padding: 5px;
 }
-.ui-select-multiple{
-	width: 100%;
+
+.ui-select-multiple {
+    width: 100%;
 }
