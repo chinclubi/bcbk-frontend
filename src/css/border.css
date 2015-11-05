@@ -1,14 +1,16 @@
-.gold{
+.gold {
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
     border: 6px ridge #d9ca43;
     background-color: #FFFFFF;
 }
-body{
+
+body {
     background-color: #FFF;
 }
-.silver{
+
+.silver {
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
@@ -16,7 +18,7 @@ body{
     background-color: #FFFFFF;
 }
 
-.bronze{
+.bronze {
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
@@ -29,22 +31,22 @@ img {
     margin: 10px;
 }
 
-.VIP-banner{
-/*    background-color: #f0e6b1;*/
+.VIP-banner {
+    /*    background-color: #f0e6b1;*/
 }
 
-.silver-banner{
-/*    background-color: #f4f1e2;*/
+.silver-banner {
+    /*    background-color: #f4f1e2;*/
 }
 
-.bronze-banner{
-/*    background-color: rgba(184, 111, 71, 0.42);*/
+.bronze-banner {
+    /*    background-color: rgba(184, 111, 71, 0.42);*/
 }
 
-.sponsors-section .container{
+.sponsors-section .container {
     padding-top: 70px;
 }
 
-.sponsors-section{
+.sponsors-section {
     background-color: #f4f1e2;
 }

@@ -1,31 +1,36 @@
 .schedule {
     color: white;
     background-color: #3D3536;
-    padding-top : 50px;
+    padding-top: 50px;
     padding-bottom: 20px;
 }
- 
+
 .schedule h1 {
     font-weight: bold;
 }
+
 .schedule .time {
     font-size: 15px;
     font-weight: bold;
     color: #99A37A;
     margin-bottom: 5px;
 }
+
 .schedule .date {
     font-size: 20px;
     color: #f0e6b1;
     margin-bottom: 2em;
 }
+
 .schedule .row {
     margin-bottom: 20px;
 }
+
 .schedule .activity-topic {
     font-size: 20px;
     margin-bottom: 5px;
 }
+
 .schedule .activity-description {
     font-weight: bold;
     color: #70584B;

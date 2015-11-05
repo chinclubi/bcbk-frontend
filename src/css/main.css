@@ -1,72 +1,70 @@
-
-@media screen and (min-width:1px) and (max-width:992px){
-    .first-part{
+@media screen and (min-width: 1px) and (max-width: 992px) {
+    .first-part {
         height: 40%;
         display: flex;
         align-items: center;
     }
 
-    .second-part{
-/*        display: flex;*/
-        margin-top:10%;
+    .second-part {
+        /*        display: flex;*/
+        margin-top: 10%;
         align-items: center;
-        height : 60%;
+        height: 60%;
         margin-left: 10px;
         margin-right: 10px
     }
 
-    .sqr{
-        background-color: rgba(153,163,122, 0.3);
-        margin-top : 5px;
+    .sqr {
+        background-color: rgba(153, 163, 122, 0.3);
+        margin-top: 5px;
         margin-bottom: 5px;
     }
 }
 
-.sqr{
+.sqr {
     display: flex;
     align-items: center;
 }
-@media (min-width:992px){
-    .first-part{
-        height:75%;
+
+@media (min-width: 992px) {
+    .first-part {
+        height: 75%;
         display: flex;
         align-items: center;
     }
 
-    .second-part{
-        height:25%;
+    .second-part {
+        height: 25%;
     }
 
-    .sqr{
-        background-color: rgba(153,163,122, 0.3);
-        height:100%;
+    .sqr {
+        background-color: rgba(153, 163, 122, 0.3);
+        height: 100%;
     }
 }
 
-
-
-.X{
-    width :100%;
-    height:100%;
+.X {
+    width: 100%;
+    height: 100%;
 }
 
-.vcenter{
+.vcenter {
     background: white;
 }
 
-.whatIs{
-  padding-top: 20px;
-  padding-bottom: 20px;
+.whatIs {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-p{
-  font-size: 1.25em;
+p {
+    font-size: 1.1em;
 }
 
-.whatIs p{
-  font-weight: bold;
+.whatIs p {
+    font-weight: bold;
 }
 
-.whatIs h1{
-  padding-bottom: 20px;
+.whatIs h1 {
+    padding-bottom: 20px;
 }

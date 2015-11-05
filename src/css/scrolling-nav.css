@@ -14,19 +14,19 @@ html {
     height: 100%;
 }
 
-@media(min-width: 2px) {
+@media (min-width: 2px) {
     .navbar {
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
         background-color: transparent;
         border: 0px solid black;
     }
 
     .top-nav-collapse {
-/*        -webkit-filter: blur(3px);*/
-/*        filter: blur(3px);*/
-        background-color: rgba(232,225,161, 0.6);
+        /*        -webkit-filter: blur(3px);*/
+        /*        filter: blur(3px);*/
+        background-color: rgba(232, 225, 161, 0.6);
     }
 }
 
@@ -36,10 +36,10 @@ of those sections to manage the look and feel of the site. */
 
 .main-section {
     text-align: center;
-/*    background: #fff;*/
+    /*    background: #fff;*/
 }
 
-.main-section .padding{
+.main-section .padding {
     height: 75%;
 }
 

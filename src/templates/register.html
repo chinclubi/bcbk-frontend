@@ -1,129 +1,131 @@
 <div ng-controller="RegisterController">
-<div class="box-content">
-  <div class="regisHead">
-     <h1>REGISTER</h1>
-  </div>
-  <div class="regisContent">
-      <div class="inform">
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>First Name</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <input type="text" class="form-control" id="firstname">
-                  </div>
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Last Name</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <input type="text" class="form-control" id="lastname">
-                  </div>
+    <div class="box-content">
+        <div class="regisHead">
+            <h1>REGISTER</h1>
+        </div>
+        <div class="regisContent">
+            <div class="inform">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>First Name</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="firstname">
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Last Name</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="lastname">
+                        </div>
 
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Gender</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <select id="gender" class="form-control">
-                          <option value="Male">Male</option>
-                          <option value="Female">Female</option>
-                      </select>
-                  </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Gender</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="gender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
 
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Profession</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <input type="text" class="form-control" id="profession">
-                  </div>
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Workplace</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <input type="text" class="form-control" id="workplace">
-                  </div>
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Email</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <input type="email" class="form-control" id="email">
-                  </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Profession</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="profession">
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Workplace</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="workplace">
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control" id="email">
+                        </div>
 
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Twitter</label>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="input-group">
-                      <div class="input-group-addon">@</div>
-                      <input type="text" class="form-control" id="twitter" placeholder="">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Twitter</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">@</div>
+                                <input type="text" class="form-control" id="twitter" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Website</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="website">
+                        </div>
+
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Food Requirements</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="food-requirement" class="form-control">
+                                <option value="None">None</option>
+                                <option value="Islam">Islam (อิสลาม)</option>
+                                <option value="Vegeterian">Vegeterian (มังสวิรัติ)</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label>Food Allergy</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="allergy">
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Website</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <input type="text" class="form-control" id="website">
-                  </div>
+                </div>
+            </div>
+            <div class="regisFooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-wrap">
+                            <h1>Interests</h1>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input id="interest" class="form-control">
+                        </div>
+                    </div>
+                    <div class="button-wrap">
+                        <button class="regis-btn hvr-fade">REGISTER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Food Requirements</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <select id="food-requirement" class="form-control">
-                          <option value="None">None</option>
-                          <option value="Islam">Islam (อิสลาม)</option>
-                          <option value="Vegeterian">Vegeterian (มังสวิรัติ)</option>
-                      </select>
-                  </div>
-                  <div class="col-sm-4 col-sm-offset-2">
-                      <label>Food Allergy</label>
-                  </div>
-                  <div class="col-sm-4">
-                      <input type="text" class="form-control" id="allergy">
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="regisFooter">
-          <div class="container">
-              <div class="row">
-                  <div class="text-wrap">
-                      <h1>Interests</h1>
-                  </div>
-                  <div class="col-sm-8 col-sm-offset-2">
-                      <input id="interest" class="form-control">
-                  </div>
-              </div>
-              <div class="button-wrap">
-                  <button class="regis-btn hvr-fade">REGISTER</button>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <div class="regisSuccess">
-      <div class="row">
-          <div style="font-size: 30px;">
-          <i class="fa fa-check fa-5x"></i>
-          </div>
-      </div>
-      <div class="row">
-          <h2>Registration Successfully</h2>
-          <br>
-      </div>
-      <div class="row">
-          <h5> If you have entered your email, you will recieve a confirmation email shortly.</h5>
-      </div>
-      <div class="row">
-          <h5> In either case, check your name at Who's coming and see you at Barcamp.</h5>
-      </div>
-      <div class="row">
-          <h7> If you want to edit your information, just check the email we sent to you.</h7>
-      </div>
-      <div class="row">
-          <br><br>
-          <button class="btn btn-default btn-lg outline btn-back hvr-fade" role="button" ng-click="backToRegister()">BACK</button>
-      </div>
-  </div>
-</div>
+        <div class="regisSuccess">
+            <div class="row">
+                <div style="font-size: 30px;">
+                    <i class="fa fa-check fa-5x"></i>
+                </div>
+            </div>
+            <div class="row">
+                <h2>Registration Successfully</h2>
+                <br>
+            </div>
+            <div class="row">
+                <h5> If you have entered your email, you will recieve a confirmation email shortly.</h5>
+            </div>
+            <div class="row">
+                <h5> In either case, check your name at Who's coming and see you at Barcamp.</h5>
+            </div>
+            <div class="row">
+                <h7> If you want to edit your information, just check the email we sent to you.</h7>
+            </div>
+            <div class="row">
+                <br><br>
+                <button class="btn btn-default btn-lg outline btn-back hvr-fade" role="button"
+                        ng-click="backToRegister()">BACK
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
