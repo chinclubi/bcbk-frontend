@@ -5,11 +5,12 @@
     .module('controller.edituser', [])
     .controller('EditUserController', EditUserController)
 
-  EditUserController.$inject = ['$scope', '$stateParams', '$http']
-  function EditUserController ($scope, $stateParams, $http) {
+  EditUserController.$inject = ['$scope', '$stateParams', '$http', '$location']
+  function EditUserController ($scope, $stateParams, $http, $location) {
     var urlEmail = $stateParams.email;
     var urlCode = $stateParams.code;
     var self = this;
+    var regisContent = $('.regisContent');
     var successForm = $('.regisSuccess');
     successForm.hide();
     $(document).ready(function(){
@@ -17,7 +18,6 @@
       var apiURL = "http://api.barcampbangkhen.org/valid?";
       $http.get(apiURL + 'email=' + urlEmail + '&unique_code=' + urlCode).success(function(response){
         if(response.allow == true){
-          console.log(response.data);
           $('#firstname').val(response.data.firstname);
           $('#lastname').val(response.data.lastname);
           $('#gender').val(response.data.gender);
@@ -30,9 +30,14 @@
           $('#allergy').val(response.data.food_allergy);
           $('#interest').val(response.data.interest);
         }
-    	});
+        else {
+          $location.path( "/home" );
+        }
+    	}).error(function (data, status){
+                console.log("Error status : " + status);
+                $location.path( "/home" );
+            });
 
-        var regisContent = $('.regisContent');
         var firstnameE = $('#firstname');
         var lastnameE = $('#lastname');
         var genderE = $('#gender');
@@ -86,13 +91,12 @@
                 };
 
                 regisContent.fadeOut();
-                //successForm.fadeIn();
 
                 $.post(
                   'http://api.barcampbangkhen.org/edit', sendingData,
                   function (data) {
                     console.log(data)
-                    successForm.fadeIn()
+                    successForm.fadeIn();
                   }
                 ).fail(function (data) {
                   console.log(data)
