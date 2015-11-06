@@ -26,7 +26,10 @@
             var interestE = $('#interest');
             var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE, interestE]
 
-            $('.regis-btn').click(function () {
+            submitRegistration = function () {
+              if( $('.regis-btn').hasClass("disabled") ) {
+                return;
+              }
                 var isEmpty = false
                 for (var i = 0; i < elementArr.length; i++) {
                     if (elementArr[i].val() == '') {
@@ -90,9 +93,10 @@
                     $('#interest').val("");
                     regisContent.fadeIn()
                     successForm.fadeOut()
+                    $('.regis-btn').addClass("disabled");
                 }
 
-            })
+            };
         })
     }
 
