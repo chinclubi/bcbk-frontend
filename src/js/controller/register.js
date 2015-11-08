@@ -10,23 +10,39 @@
     function RegisterController($scope, $http) {
         var self = this
         var successForm = $('.regisSuccess')
+        var allowRegister = false;
         successForm.hide()
         $('.regis-loading').hide();
-        $('input[name="email"]').focusout(function(){
-          if(this.value != ""){
-            sendingData = {
-              email: this.value,
-            }
-            $.post(
-                'http://api.barcampbangkhen.org/checkemail', sendingData,
-                function (data) {
+        var checkEmail =  function(thisEmail, cb) {
+            if(thisEmail != ""){
+              sendingData = {
+                email: thisEmail,
+              }
+              $.post(
+                  'http://api.barcampbangkhen.org/checkemail', sendingData,
+                  function (data) {
+                    $('div[name="emailformMessage"]').text("")
+                  }
+              ).success(function(){
+                allowRegister = true;
+                cb()
+              })
+              .fail(function (data) {
+                  console.log(data.status)
+                  if(data.status == 402){
+                      $('div[name="emailformMessage"]').text("this email is already taken.")
+                  }
+                  if(data.status == 401){
+                      $('div[name="emailformMessage"]').text("this email is invalid.")
+                  }
+                  $('div[name="emailform"]').addClass("has-error");
+                  $('.regis-btn').addClass("disabled");
 
-                }
-            ).fail(function (data) {
-                    $('div[name="emailform"]').addClass("has-error");
-                    $('div[name="emailformMessage"]').text("this emali is already taken.")
-                })
-          }
+              });
+            }
+        }
+        $('input[name="email"]').focusout(function(){
+            checkEmail(this.value, function(){});
         });
 
         $(document).ready(function () {
@@ -48,82 +64,88 @@
               if( $('.regis-btn').hasClass("disabled") ) {
                 return;
               }
-                var isEmpty = false
-                for (var i = 0; i < elementArr.length; i++) {
-                    if (elementArr[i].val() == '') {
-                        isEmpty = true
-                        elementArr[i].effect('shake')
-                        elementArr[i].effect('highlight')
+              if(!allowRegister){
+                console.log(emailE.val())
+                var callBack = function () {
+                  var isEmpty = false
+                  for (var i = 0; i < elementArr.length; i++) {
+                      if (elementArr[i].val() == '') {
+                          isEmpty = true
+                          elementArr[i].effect('shake')
+                          elementArr[i].effect('highlight')
 
-                    }
+                      }
+                  }
+                  if (!isEmpty) {
+                      var firstnamex = firstnameE.val()
+                      var lastnamex = lastnameE.val()
+                      var genderx = genderE.val()
+                      var professionx = professionE.val()
+                      var workplacex = workplaceE.val()
+                      var emailx = emailE.val()
+                      var twitterx = twitterE.val()
+                      var websitex = websiteE.val()
+                      var food_reqx = food_reqE.val()
+                      var food_allergyx = food_allergyE.val()
+                      var interestx = interestE.val()
+
+                      var sendingData = {
+                          firstname: firstnamex,
+                          lastname: lastnamex,
+                          gender: genderx,
+                          profession: professionx,
+                          workplace: workplacex,
+                          email: emailx,
+                          twitter: twitterx,
+                          website: websitex,
+                          food_req: food_reqx,
+                          food_allergy: food_allergyx,
+                          interests: interestx
+                      }
+                      $('.regis-btn').fadeOut(function() {
+                        $('.regis-loading').fadeIn();
+                      });
+                      // successForm.fadeIn()
+
+                      $.post(
+                          'http://api.barcampbangkhen.org/register', sendingData,
+                          function (data) {
+                              console.log(data)
+                              regisContent.fadeOut(function() {
+                                successForm.fadeIn();
+                              });
+
+                          }
+                      ).fail(function (data) {
+                              console.log(data)
+                          })
+                  }
+
+                  $scope.backToRegister = function () {
+                      $('#firstname').val("");
+                      $('#lastname').val("");
+                      $('#gender').val("Male");
+                      $('#profession').val("");
+                      $('#workplace').val("");
+                      $('#email').val("");
+                      $('#twitter').val("");
+                      $('#website').val("");
+                      $('#food-requirement').val("None");
+                      $('#allergy').val("");
+                      $('#interest').val("");
+
+                      $('.regis-loading').hide();
+                      $('.regis-btn').show();
+                      successForm.fadeOut(function() {
+                        regisContent.fadeIn();
+                        allowRegister = false;
+                      });
+                      $('.regis-btn').addClass("disabled");
+                  }
                 }
-                if (!isEmpty) {
-                    var firstnamex = firstnameE.val()
-                    var lastnamex = lastnameE.val()
-                    var genderx = genderE.val()
-                    var professionx = professionE.val()
-                    var workplacex = workplaceE.val()
-                    var emailx = emailE.val()
-                    var twitterx = twitterE.val()
-                    var websitex = websiteE.val()
-                    var food_reqx = food_reqE.val()
-                    var food_allergyx = food_allergyE.val()
-                    var interestx = interestE.val()
-
-                    var sendingData = {
-                        firstname: firstnamex,
-                        lastname: lastnamex,
-                        gender: genderx,
-                        profession: professionx,
-                        workplace: workplacex,
-                        email: emailx,
-                        twitter: twitterx,
-                        website: websitex,
-                        food_req: food_reqx,
-                        food_allergy: food_allergyx,
-                        interests: interestx
-                    }
-                    $('.regis-btn').fadeOut(function() {
-                      $('.regis-loading').fadeIn();
-                    });
-                    // successForm.fadeIn()
-
-                    $.post(
-                        'http://api.barcampbangkhen.org/register', sendingData,
-                        function (data) {
-                            console.log(data)
-                            regisContent.fadeOut(function() {
-                              successForm.fadeIn();
-                            });
-
-                        }
-                    ).fail(function (data) {
-                            console.log(data)
-                        })
-                }
-
-                $scope.backToRegister = function () {
-                    $('#firstname').val("");
-                    $('#lastname').val("");
-                    $('#gender').val("Male");
-                    $('#profession').val("");
-                    $('#workplace').val("");
-                    $('#email').val("");
-                    $('#twitter').val("");
-                    $('#website').val("");
-                    $('#food-requirement').val("None");
-                    $('#allergy').val("");
-                    $('#interest').val("");
-
-                    $('.regis-loading').hide();
-                    $('.regis-btn').show();
-                    successForm.fadeOut(function() {
-                      regisContent.fadeIn();
-                    });
-                    $('.regis-btn').addClass("disabled");
-                }
-
-
+                console.log(callBack)
+                checkEmail(emailE.val(), callBack);
+              }
             };
         })
     }
