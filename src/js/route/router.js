@@ -5,7 +5,7 @@
     .module('services.route', ['ui.router'])
     .config(config)
 
-  config.$inject = ['$stateProvider', '$urlRouterProvider']
+    config.$inject = ['$stateProvider', '$urlRouterProvider']
 
   function config ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when('', '/home')
