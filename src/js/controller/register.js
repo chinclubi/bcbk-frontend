@@ -28,7 +28,6 @@
                 cb()
               })
               .fail(function (data) {
-                  console.log(data.status)
                   if(data.status == 402){
                       $('div[name="emailformMessage"]').text("this email is already taken.")
                   }
@@ -65,7 +64,6 @@
                 return;
               }
               if(!allowRegister){
-                console.log(emailE.val())
                 var callBack = function () {
                   var isEmpty = false
                   for (var i = 0; i < elementArr.length; i++) {
@@ -110,14 +108,12 @@
                       $.post(
                           'http://api.barcampbangkhen.org/register', sendingData,
                           function (data) {
-                              console.log(data)
                               regisContent.fadeOut(function() {
                                 successForm.fadeIn();
                               });
 
                           }
                       ).fail(function (data) {
-                              console.log(data)
                           })
                   }
 
@@ -143,7 +139,6 @@
                       $('.regis-btn').addClass("disabled");
                   }
                 }
-                console.log(callBack)
                 checkEmail(emailE.val(), callBack);
               }
             };
