@@ -339,7 +339,8 @@ img {
 
 .parking-and-transport {
     color: #e8e8e8;
-    background-color: #99A37A;
+    /*background-color: #99A37A;*/
+    background-color: rgba(181, 214, 170, 0.28)
 }
 
 .parking-and-transport h2 {
