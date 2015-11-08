@@ -52,21 +52,9 @@
     background: white;
 }
 
-.whatIs {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 
 p {
     font-size: 1.1em;
-}
-
-.whatIs p {
-    font-weight: bold;
-}
-
-.whatIs h1 {
-    padding-bottom: 20px;
 }
 
 .hover-fade {
