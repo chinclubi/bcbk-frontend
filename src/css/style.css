@@ -320,7 +320,8 @@ img {
 }
 
 .location {
-    background-color: transparent;
+    /*background-color: transparent;*/
+    background-color: rgba(181, 214, 170, 0.28)
 }
 
 .location .topic {
