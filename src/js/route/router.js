@@ -5,7 +5,7 @@
     .module('services.route', ['ui.router'])
     .config(config)
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider']
+  config.$inject = ['$stateProvider', '$urlRouterProvider']
 
   function config ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when('', '/home')
@@ -27,13 +27,13 @@
         url: '/whoscoming',
         templateUrl: 'templates/whoscoming.html',
         controller: 'WhoscomingController',
-        controllerAs: 'WhoscomingCtrl',
+        controllerAs: 'WhoscomingCtrl'
       })
       .state('edituser', {
         url: '/editprofile?email&c',
         templateUrl: 'templates/edituser.html',
         controller: 'EditUserController',
-        controllerAs: 'EditUserCtrl',
+        controllerAs: 'EditUserCtrl'
       })
   }
 })()

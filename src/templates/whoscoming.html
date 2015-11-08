@@ -7,10 +7,13 @@
 
 <div class="content">
     <div class="filter">
-        <ui-select ng-model="filter.selected" multiple>
+        <ui-select ng-model="WhoscomingCtrl.filter.selected" multiple>
             <ui-select-match placeholder="Filter by interest">{{$item}}</ui-select-match>
-            <ui-select-choices repeat="interest in interests | filter:$select.search">{{interest}}</ui-select-choices>
+            <ui-select-choices repeat="interest in WhoscomingCtrl.interests | filter:$select.search">
+                {{interest}}
+            </ui-select-choices>
         </ui-select>
+        <p>Selected: {{WhoscomingCtrl.filter}}</p>
     </div>
     <table class="who">
         <thead>
@@ -22,7 +25,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="person in find(people, filter.selected)">
+        <tr ng-repeat="person in WhoscomingCtrl.find(WhoscomingCtrl.people, WhoscomingCtrl.filter.selected)">
             <td class="index">{{$index+1}}.</td>
             <td>
                 <div ng-if="!person.website">
