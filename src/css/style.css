@@ -286,3 +286,12 @@ img {
 .sponsor-logo img {
     margin: 0;
 }
+
+.register {
+    /*background-color: #f4f1e2;*/
+    background-color: #e8e8e8;
+}
+
+.social {
+    background-color: #3d3536;
+}
