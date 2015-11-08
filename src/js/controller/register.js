@@ -11,6 +11,22 @@
         var self = this
         var successForm = $('.regisSuccess')
         successForm.hide()
+        $('input[name="email"]').focusout(function(){
+          if(this.value != ""){
+            sendingData = {
+              email: this.value,
+            }
+            $.post(
+                'http://api.barcampbangkhen.org/checkemail', sendingData,
+                function (data) {
+                  
+                }
+            ).fail(function (data) {
+                    $('div[name="emailform"]').addClass("has-error");
+                    $('div[name="emailformMessage"]').text("this emali is already taken.")
+                })
+          }
+        })
         $(document).ready(function () {
             var regisContent = $('.regisContent');
             var firstnameE = $('#firstname');
@@ -95,6 +111,7 @@
                     successForm.fadeOut()
                     $('.regis-btn').addClass("disabled");
                 }
+
 
             };
         })
