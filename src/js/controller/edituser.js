@@ -14,6 +14,8 @@
         var regisContent = $('.regisContent');
         var successForm = $('.regisSuccess');
         successForm.hide();
+        $('.regis-loading').hide();
+
         $(document).ready(function () {
 
             var apiURL = "http://api.barcampbangkhen.org/valid?";
@@ -50,10 +52,13 @@
             var food_reqE = $('#food-requirement');
             var food_allergyE = $('#allergy');
             var interestE = $('#interest');
-            var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE, interestE];
+            var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE];
 
 
-            $('.regis-btn').click(function () {
+            submitRegistration = function () {
+              if( $('.regis-btn').hasClass("disabled") ) {
+                return;
+              }
                 var isEmpty = false;
                 for (var i = 0; i < elementArr.length; i++) {
                     if (elementArr[i].val() == "") {
@@ -90,14 +95,19 @@
                         interests: interestx,
                         unique_code: urlCode,
                     };
+                    $('.regis-btn').fadeOut(function() {
+                      $('.regis-loading').fadeIn();
+                    });
 
-                    regisContent.fadeOut();
 
                     $.post(
                         'http://api.barcampbangkhen.org/edit', sendingData,
                         function (data) {
-                            console.log(data)
-                            successForm.fadeIn();
+                            console.log(data);
+                            regisContent.fadeOut(function() {
+                              successForm.fadeIn();
+                            });
+
                         }
                     ).fail(function (data) {
                             console.log(data)
@@ -106,11 +116,15 @@
                 }
 
                 $scope.backToEditUser = function () {
+                  $('.regis-loading').hide();
+                  $('.regis-btn').show();
+                  successForm.fadeOut(function() {
                     regisContent.fadeIn();
-                    successForm.fadeOut();
+                  });
+
                 };
 
-            });
+            };
         });
     }
 

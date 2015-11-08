@@ -11,6 +11,7 @@
         var self = this
         var successForm = $('.regisSuccess')
         successForm.hide()
+        $('.regis-loading').hide();
         $('input[name="email"]').focusout(function(){
           if(this.value != ""){
             sendingData = {
@@ -19,14 +20,15 @@
             $.post(
                 'http://api.barcampbangkhen.org/checkemail', sendingData,
                 function (data) {
-                  
+
                 }
             ).fail(function (data) {
                     $('div[name="emailform"]').addClass("has-error");
                     $('div[name="emailformMessage"]').text("this emali is already taken.")
                 })
           }
-        })
+        });
+
         $(document).ready(function () {
             var regisContent = $('.regisContent');
             var firstnameE = $('#firstname');
@@ -40,7 +42,7 @@
             var food_reqE = $('#food-requirement');
             var food_allergyE = $('#allergy');
             var interestE = $('#interest');
-            var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE, interestE]
+            var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE]
 
             submitRegistration = function () {
               if( $('.regis-btn').hasClass("disabled") ) {
@@ -81,14 +83,19 @@
                         food_allergy: food_allergyx,
                         interests: interestx
                     }
-                    regisContent.fadeOut();
+                    $('.regis-btn').fadeOut(function() {
+                      $('.regis-loading').fadeIn();
+                    });
                     // successForm.fadeIn()
 
                     $.post(
                         'http://api.barcampbangkhen.org/register', sendingData,
                         function (data) {
                             console.log(data)
-                            successForm.fadeIn()
+                            regisContent.fadeOut(function() {
+                              successForm.fadeIn();
+                            });
+
                         }
                     ).fail(function (data) {
                             console.log(data)
@@ -107,8 +114,12 @@
                     $('#food-requirement').val("None");
                     $('#allergy').val("");
                     $('#interest').val("");
-                    regisContent.fadeIn()
-                    successForm.fadeOut()
+
+                    $('.regis-loading').hide();
+                    $('.regis-btn').show();
+                    successForm.fadeOut(function() {
+                      regisContent.fadeIn();
+                    });
                     $('.regis-btn').addClass("disabled");
                 }
 
