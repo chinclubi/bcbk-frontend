@@ -76,6 +76,10 @@ img {
     text-align: center;
 }
 
+.cover .container {
+    padding-top: 4%;
+}
+
 .cover .row {
     margin-bottom: 5%;
 }
