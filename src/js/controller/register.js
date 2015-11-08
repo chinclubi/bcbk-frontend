@@ -9,8 +9,9 @@
     RegisterController.$inject = ['$scope', '$http']
     function RegisterController($scope, $http) {
         var self = this
-        var successForm = $('.regisSuccess')
-        successForm.hide()
+        var successForm = $('.regisSuccess');
+        successForm.hide();
+        $('.regis-loading').hide();
         $(document).ready(function () {
             var regisContent = $('.regisContent');
             var firstnameE = $('#firstname');
@@ -24,7 +25,7 @@
             var food_reqE = $('#food-requirement');
             var food_allergyE = $('#allergy');
             var interestE = $('#interest');
-            var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE, interestE]
+            var elementArr = [firstnameE, lastnameE, genderE, professionE, workplaceE, emailE, food_reqE]
 
             submitRegistration = function () {
               if( $('.regis-btn').hasClass("disabled") ) {
@@ -65,14 +66,19 @@
                         food_allergy: food_allergyx,
                         interests: interestx
                     }
-                    regisContent.fadeOut();
+                    $('.regis-btn').fadeOut(function() {
+                      $('.regis-loading').fadeIn();
+                    });
                     // successForm.fadeIn()
 
                     $.post(
                         'http://api.barcampbangkhen.org/register', sendingData,
                         function (data) {
                             console.log(data)
-                            successForm.fadeIn()
+                            regisContent.fadeOut(function() {
+                              successForm.fadeIn();
+                            });
+
                         }
                     ).fail(function (data) {
                             console.log(data)
@@ -91,8 +97,12 @@
                     $('#food-requirement').val("None");
                     $('#allergy').val("");
                     $('#interest').val("");
-                    regisContent.fadeIn()
-                    successForm.fadeOut()
+
+                    $('.regis-loading').hide();
+                    $('.regis-btn').show();
+                    successForm.fadeOut(function() {
+                      regisContent.fadeIn();
+                    });
                     $('.regis-btn').addClass("disabled");
                 }
 
