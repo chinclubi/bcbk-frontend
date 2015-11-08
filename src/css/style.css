@@ -26,6 +26,8 @@ img {
 
 .container {
     max-width: 900px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .main-section .container {
@@ -37,24 +39,6 @@ img {
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
-}
-
-.main-section .logo {
-    max-height: 70%;
-    padding-bottom: 2.5%;
-}
-
-.subFootSqrIcon {
-}
-
-.subFootSqrIcon, .main-section .padding .col-md-4 {
-    max-width: 50%;
-}
-
-.subFootSqr {
-    max-height: 50%;
-    padding-top: 10px;
-    width: 220px;
 }
 
 .footSqr .row {
@@ -139,6 +123,10 @@ img {
 
 /*//------------------------------------------*/
 
+.section {
+    padding: 5% 0 5%;
+}
+
 .cover {
     text-align: center;
 }
@@ -171,14 +159,18 @@ img {
     background-color: #e8e8e8;
 }
 
-.cover .quick-info {
+.quick-info-bar {
+    background-color: rgba(181, 214, 170, 0.28);
+}
+
+.quick-info-bar .quick-info {
     height: 100%;
     color: #e8e8e8;
     font-size: 1.2em;
-    background-color: rgba(181, 214, 170, 0.28)
+    background-color: transparent;
 }
 
-.cover .quick-info .row {
+.quick-info-bar .quick-info .row {
     margin-bottom: 0;
     padding: 1.4em 0;
     display: flex;
@@ -186,24 +178,131 @@ img {
     justify-content: center;
 }
 
-.cover .fa {
+.quick-info .info {
+    max-height: 50%;
+    padding: 0;
+}
+
+.quick-info-bar .fa {
     color: #f0e6b1;
 }
 
 @media screen and (max-width: 299px) {
-    .cover .fa {
-        font-size: 2em;
+    .quick-info-bar {
+        background-color: transparent;
     }
-}
 
-@media screen and (min-width: 300px) and (max-width: 799px) {
-    .cover .fa {
+    .quick-info-bar .quick-info {
+        width: 90%;
+        margin: 1.5% 5%;
+        padding: 0 10%;
+        background-color: rgba(181, 214, 170, 0.28);
+    }
+
+    .quick-info-bar .fa {
         font-size: 2.5em;
     }
 }
 
-@media screen and (min-width: 800px) {
-    .cover .fa {
+@media screen and (min-width: 300px) and (max-width: 799px) {
+    .quick-info-bar {
+        background-color: transparent;
+    }
+
+    .quick-info-bar .quick-info {
+        width: 90%;
+        margin: 1.5% 5%;
+        padding: 0 10%;
+        background-color: rgba(181, 214, 170, 0.28);
+    }
+
+    .quick-info-bar .fa {
         font-size: 4em;
     }
+}
+
+@media screen and (min-width: 800px) and (max-width: 992px) {
+    .quick-info-bar {
+        background-color: transparent;
+    }
+
+    .quick-info-bar .quick-info {
+        width: 98%;
+        margin: 0.5% 1%;
+        padding: 0 30%;
+        background-color: rgba(181, 214, 170, 0.28);
+    }
+
+    .quick-info-bar .fa {
+        font-size: 4em;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .quick-info-bar .fa {
+        font-size: 4em;
+    }
+}
+
+.quick-about .container {
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+.quick-about {
+    background-color: #e8e8e8;
+}
+
+.quick-about h1 {
+    margin: 20px 0 20px;
+}
+
+.quick-about p {
+    font-weight: 700;
+    margin: 15px 0 30px;
+}
+
+.schedule {
+    color: #e8e8e8;
+    background-color: #3D3536;
+}
+
+.schedule .container {
+    margin-bottom: -3%;
+}
+
+.schedule h1 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.schedule .topic {
+    color: #e8e8e8;
+}
+
+.schedule .date {
+    font-size: 20px;
+    color: #f0e6b1;
+    /*margin-bottom: 30px;*/
+}
+
+.schedule .time {
+    font-size: 15px;
+    font-weight: 600;
+    color: #99A37A;
+    padding: 6% 0 1%;
+}
+
+.schedule .row {
+    margin-bottom: 3%;
+}
+
+.schedule .activity-topic {
+    font-size: 1.75em;
+    margin-bottom: 5px;
+}
+
+.schedule .activity-description {
+    font-weight: bold;
+    color: #70584B;
 }
