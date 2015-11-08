@@ -13,6 +13,19 @@ body {
     background-size: cover;
 }
 
+h1 {
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
 img {
     padding: 0;
 }
@@ -26,8 +39,6 @@ img {
 
 .container {
     max-width: 900px;
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .main-section .container {
@@ -271,11 +282,6 @@ img {
     margin-bottom: -3%;
 }
 
-.schedule h1 {
-    margin: 0;
-    font-weight: bold;
-}
-
 .schedule .topic {
     color: #e8e8e8;
 }
@@ -283,7 +289,6 @@ img {
 .schedule .date {
     font-size: 20px;
     color: #f0e6b1;
-    /*margin-bottom: 30px;*/
 }
 
 .schedule .time {
@@ -291,6 +296,13 @@ img {
     font-weight: 600;
     color: #99A37A;
     padding: 6% 0 1%;
+}
+
+.schedule .session-time {
+    font-size: 15px;
+    font-weight: 600;
+    color: #99A37A;
+    margin-bottom: 5px;
 }
 
 .schedule .row {
@@ -303,6 +315,38 @@ img {
 }
 
 .schedule .activity-description {
-    font-weight: bold;
+    font-weight: 600;
     color: #70584B;
+}
+
+.location {
+    background-color: transparent;
+}
+
+.location .topic {
+    color: #e8e8e8;
+}
+
+.location .place {
+    font-size: 20px;
+    color: #f0e6b1;
+}
+
+.map {
+    height: 400px;
+    background-color: #141111;
+}
+
+.parking-and-transport {
+    color: #e8e8e8;
+    background-color: #99A37A;
+}
+
+.parking-and-transport h2 {
+    font-size: 1.75em;
+}
+
+.parking-and-transport h3 {
+    font-size: 1.25em;
+    color: #f0e6b1;
 }
