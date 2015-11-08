@@ -6,29 +6,8 @@ html {
     min-height: 100vh;
 }
 
-.regisHead {
-    background-image: url("../img/main-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 200px;
-    margin-top: -20px;
-
-}
-
-.regisHead h1 {
-    color: #e8e8e8;
-    font-family: url("../fonts/glyphicons-halflings-regular.ttf");
-    text-align: center;
-    padding-top: 140px;
-    font-size: 40px;
-    font-stretch: extra-expanded;
-    font-weight: bold;
-}
-
 .regisContent {
-    background-color: #e8e8e8;
-    padding-top: 25px;
-    padding-bottom: 25px;
+
 }
 
 .regisContent label {
