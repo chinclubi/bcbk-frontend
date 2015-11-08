@@ -4,7 +4,7 @@
   angular
     .module('controller.whoscoming', ['ui.select'])
     .config(['uiSelectConfig', function (uiSelectConfig) {
-      uiSelectConfig.theme = 'select2'
+      uiSelectConfig.theme = 'bootstrap'
     }])
     .controller('WhoscomingController', WhoscomingController)
 
