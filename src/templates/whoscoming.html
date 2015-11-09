@@ -10,54 +10,50 @@
 
 </section>
 
-<section class="who-is-coming section">
+<section class="who-is-coming">
 
-    <div class="content">
-        <div class="filter">
+    <div class="container filter">
+
             <ui-select ng-model="WhoscomingCtrl.filter.selected" multiple>
                 <ui-select-match placeholder="Filter by interest">{{$item}}</ui-select-match>
                 <ui-select-choices repeat="interest in WhoscomingCtrl.interests | filter:$select.search">
                     {{interest}}
                 </ui-select-choices>
             </ui-select>
-        </div>
-        <table class="who">
+
+    </div>
+    <div class="container content">
+        <table>
             <thead>
             <tr>
                 <th style="width: 50px;" class="index"></th>
                 <th>Name</th>
-                <th style="width: 125px;">Twitter</th>
+                <th>Twitter</th>
                 <th>Interest</th>
+                <th>Website</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="person in WhoscomingCtrl.find(WhoscomingCtrl.people, WhoscomingCtrl.filter.selected)">
                 <td class="index">{{$index+1}}.</td>
                 <td>
-                    <div ng-if="!person.website">
-                        <div ng-bind="person.name"></div>
-                        <small ng-if="person.profession || person.workplace">
-                            {{person.profession}}<span ng-if="person.profession && person.workplace">, </span>{{person.workplace}}
-                        </small>
-                    </div>
-                    <div ng-if="person.website">
-                        <div>
-                            <a ng-href="http://{{person.website}}" ng-bind="person.name"></a>
-                        </div>
-                        <small ng-if="person.profession || person.workplace">
-                            {{person.profession}}<span ng-if="person.profession && person.workplace">, </span>{{person.workplace}}
-                        </small>
-                    </div>
+                    <div ng-bind="person.name"></div>
+                    <small ng-if="person.profession || person.workplace">
+                        {{person.profession}}<span ng-if="person.profession && person.workplace">, </span>{{person.workplace}}
+                    </small>
                 </td>
                 <td>
                     <div ng-if="person.twitter">
                         @<a href="https://twitter.com/{{person.twitter}}" ng-bind="person.twitter"></a>
                     </div>
                 </td>
-                <td style="width: 50%">
-          <span ng-repeat="interest in person.interests">
-            <span ng-bind="interest"></span><span ng-repeat-end ng-if="!$last">, </span>
-          </span>
+                <td>
+                    <span ng-repeat="interest in person.interests">
+                        <span ng-bind="interest"></span><span ng-repeat-end ng-if="!$last">, </span>
+                    </span>
+                </td>
+                <td>
+                    <a ng-href="http://{{person.website}}" ng-bind="person.website"></a>
                 </td>
             </tr>
             </tbody>
