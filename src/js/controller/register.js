@@ -56,7 +56,7 @@
       var food_reqE = $('#food-requirement')
       var food_allergyE = $('#allergy')
       var interestE = $('#interest')
-      var elementArr = [firstnameE, lastnameE, genderE, emailE, food_allergyE, interestE]
+      var elementArr = [firstnameE, lastnameE, genderE, emailE, interestE]
 
       submitRegistration = function () {
         if ( $('.regis-btn').hasClass('disabled')) {
