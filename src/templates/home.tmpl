@@ -277,9 +277,7 @@
     </div>
 </section>
 
-<section id="map" class="map section">
-    <div class="map">
-    </div>
+<section id="map"class="map section">
 </section>
 
 <section id="parking-and-transport" class="parking-and-transport section">
@@ -535,28 +533,29 @@
     $(document).ready(function () {
         console.log("XXX " + $(this).width());
         var resizeFunction = function () {
-            if ($(this).width() < 992) {
-                $('.padding').css("height", "50%");
-//
-                $('.bigRow').css("margin-left", "10px");
-                $('.footSqr').css("height", "50%");
-                $('.footSqr').css("margin-top", "5px");
-//      $('.footSqr').css("margin-left","10px");
-                $('.footSqr').css("margin-bottom", "5px");
-                $('.bigRow').css("margin-right", "10px");
-            } else {
-                $('.footSqr').css("margin-top", "0px");
 
-                $('.bigRow').css("margin-right", "0px");
-
-                $('.bigRow').css("margin-left", "0px");
-                $('.footSqr').css("margin-bottom", "0px");
-                $('.padding').css("height", "75%");
-                $('.footSqr').css("height", "100%");
-            }
         }
         resizeFunction();
         $(window).resize(resizeFunction);
+
+        var G = google.maps;
+
+        var center = new G.LatLng(13.846458, 100.5695385)
+
+        mapOptions = {
+            scrollwheel: false,
+            zoom: 15,
+            center: center,
+            mapTypeId: G.MapTypeId.ROADMAP
+        }
+
+        var map = new G.Map(document.getElementById("map"), mapOptions)
+
+        var marker = new G.Marker({
+            position: center,
+            map: map,
+            title: 'IUP International Building 17'
+        })
 
     });
 </script>
