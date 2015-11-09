@@ -28,10 +28,10 @@
         })
           .fail(function (data) {
             if (data.status == 402) {
-              $('div[name="emailformMessage"]').text('this email is already taken.')
+              $('div[name="emailformMessage"]').text('Bruh, that email address is already taken')
             }
             if (data.status == 401) {
-              $('div[name="emailformMessage"]').text('this email is invalid.')
+              $('div[name="emailformMessage"]').text('Bruh, that email address is invalid')
             }
             $('div[name="emailform"]').addClass('has-error')
             $('.regis-btn').addClass('disabled')
