@@ -16,6 +16,14 @@
         successForm.hide()
         $('#loading').hide()
 
+        $(window).scroll(function () {
+            if ($('.navbar').offset().top > 50) {
+                $('.navbar-fixed-top').addClass('top-nav-collapse')
+            } else {
+                $('.navbar-fixed-top').removeClass('top-nav-collapse')
+            }
+        })
+
         $(document).ready(function () {
             var apiURL = 'http://api.barcampbangkhen.org/valid?'
             $http.get(apiURL + 'email=' + urlEmail + '&unique_code=' + urlCode).success(function (response) {

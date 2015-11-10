@@ -11,6 +11,13 @@
 
     WhoscomingController.$inject = ['$scope', '$http']
     function WhoscomingController($scope, $http) {
+        $(window).scroll(function () {
+            if ($('.navbar').offset().top > 50) {
+                $('.navbar-fixed-top').addClass('top-nav-collapse')
+            } else {
+                $('.navbar-fixed-top').removeClass('top-nav-collapse')
+            }
+        })
         var self = this
         self.people = []
         self.interests = []

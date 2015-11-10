@@ -387,6 +387,11 @@ img {
     margin-bottom: 15px;
 }
 
+.register .basic-info .col-sm-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .register .form-group {
     margin-bottom: 0;
 }
