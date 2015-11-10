@@ -99,6 +99,10 @@ img {
     padding: 5% 0 5%;
 }
 
+/*----------------------------------------------*/
+/* MAIN PAGE
+/*----------------------------------------------*/
+
 .cover {
     text-align: center;
 }
@@ -363,82 +367,8 @@ img {
 }
 
 .register {
-    /*background-color: #f4f1e2;*/
-    background-color: #e8e8e8;
-}
-
-.social {
-    background-color: #3d3536;
-}
-
-.social .fb {
-    margin-bottom: 2%;
-}
-
-.footer {
-    background-color: #141111;
-}
-
-.sub-page-cover {
-    color: #e8e8e8;
-}
-
-.who-is-coming {
-    /*background-color: #e8e8e8;*/
-}
-
-.who-is-coming .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-    margin: 0;
-}
-
-.who-is-coming .filter {
-    padding: 5px 4%;
-    background-color: #99a37a;
-}
-
-.who-is-coming table {
-    width: 100%;
-    border-color: transparent;
-    border-spacing: 0 4px;
-    border-collapse: separate;
-}
-.who-is-coming th {
-    border: none;
-    padding: 5px 15px;
-    background-color: #f4f1e2;
-}
-
-.who-is-coming th:first-child {
-    padding-left: 4%;
-}
-
-.who-is-coming th:last-child {
-    padding-right: 4%;
-}
-
-.who-is-coming tr {
-    padding: 0.5% 2%;
-    border: none;
-    background-color: #e8e8e8;
-}
-
-.who-is-coming td {
-    padding: 5px 15px;
-}
-
-.who-is-coming td:first-child {
-    padding-left: 4%;
-}
-
-.who-is-coming td:last-child {
-    padding-right: 4%;
-}
-
-.register {
     color: #3d3536;
+    background-color: #e8e8e8;
 }
 
 .register .topic {
@@ -507,3 +437,84 @@ img {
     color: #b5d6aa;
 }
 
+.social {
+    background-color: #3d3536;
+}
+
+.social .fb {
+    margin-bottom: 2%;
+}
+
+.footer {
+    background-color: #141111;
+}
+
+/*----------------------------------------------*/
+/* SUB PAGES
+/*----------------------------------------------*/
+
+.sub-page-cover {
+    color: #e8e8e8;
+}
+
+.sub-page-content {
+    padding: 3% 0;
+}
+
+.who-is-coming {
+    /*background-color: #e8e8e8;*/
+}
+
+.who-is-coming .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+}
+
+.who-is-coming .filter {
+    padding: 5px 4%;
+    background-color: #99a37a;
+}
+
+.who-is-coming .ui-select-match .ui-select-match-item {
+    margin-right: 5px;
+}
+
+.who-is-coming table {
+    width: 100%;
+    border-color: transparent;
+    border-spacing: 0 4px;
+    border-collapse: separate;
+}
+.who-is-coming th {
+    border: none;
+    padding: 5px 15px;
+    background-color: #f4f1e2;
+}
+
+.who-is-coming th:first-child {
+    padding-left: 4%;
+}
+
+.who-is-coming th:last-child {
+    padding-right: 4%;
+}
+
+.who-is-coming tr {
+    padding: 0.5% 2%;
+    border: none;
+    background-color: #e8e8e8;
+}
+
+.who-is-coming td {
+    padding: 5px 15px;
+}
+
+.who-is-coming td:first-child {
+    padding-left: 4%;
+}
+
+.who-is-coming td:last-child {
+    padding-right: 4%;
+}

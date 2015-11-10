@@ -1,66 +1,143 @@
-<div class="box-content">
-    <div class="regisHead">
-        <h1>Edit Your Profile</h1>
-    </div>
-    <form data-toggle="validator" role="form" onsubmit="submitRegistration()">
-        <div class="regisContent">
-            <div class="inform">
-                <div class="container">
-                    <div class="row">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand navText page-scroll" href="#main">
+                <p class="nav-brand-text">BarCamp</p>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 
-                        <div class="form-group">
-                            <div class="col-sm-4 col-sm-offset-2">
+                <li>
+                    <a class="page-scroll" href="#schedule">
+                        <p class="nav-link-text">Schedule</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#location">
+                        <p class="nav-link-text">Location</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#sponsors">
+                        <p class="nav-link-text">Sponsors</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#register">
+                        <p class="nav-link-text">Register</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="whoscoming({reload:true})">
+                        <p class="nav-link-text">Who's Coming</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="background">
+    <img src="/img/main-bg.jpg" class="background-image" height="100%"/>
+</div>
+
+<section class="sub-page-cover section">
+
+    <div class="container topic">
+        <div class="row">
+            <div class="col-lg-12 col-xs-12 text-center topic">
+                <h1>EDIT PROFILE</h1>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="sub-page-content register">
+    <div ng-controller="EditUserController">
+
+        <div id="register-form" class="container register-form">
+            <form data-toggle="validator" role="form" onsubmit="submitRegistration()">
+                <div class="row">
+
+                    <div name="emailform" class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
                                 <label>Email*</label>
                             </div>
-                            <div class="col-sm-4">
-                                <input type="email" class="form-control" id="email"
-                                       data-error="Bruh, that email address is invalid" disabled>
-
-                                <div class="help-block with-errors"></div>
+                            <div class="col-sm-6">
+                                <input type="email" class="form-control" id="email" name="email"
+                                       data-error="The email cannot be changed" disabled>
                             </div>
                         </div>
-                        
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>First Name*</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="firstname" required>
-                        </div>
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>Last Name*</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="lastname" required>
-                        </div>
 
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>Gender</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
+                                <label>First Name*</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="firstname" required>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <select id="gender" class="form-control">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
+                    </div>
 
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>Profession</label>
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Last Name*</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="lastname" required>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="profession">
-                        </div>
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>Workplace</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="workplace">
-                        </div>
+                    </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-4 col-sm-offset-2">
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Gender</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <select id="gender" class="form-control">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Profession</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="profession">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Workplace</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="workplace">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
                                 <label>Twitter</label>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-addon">@</div>
                                     <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15"
@@ -68,79 +145,93 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>Website</label>
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Website</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="website">
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="website">
-                        </div>
+                    </div>
 
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>Food Requirements</label>
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+                            <div class="col-sm-6 ">
+                                <label>Food Requirements</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <select id="food-requirement" class="form-control">
+                                    <option value="None">None</option>
+                                    <option value="Islam">Islam (อิสลาม)</option>
+                                    <option value="Vegeterian">Vegeterian (มังสวิรัติ)</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <select id="food-requirement" class="form-control">
-                                <option value="None">None</option>
-                                <option value="Islam">Islam (อิสลาม)</option>
-                                <option value="Vegeterian">Vegeterian (มังสวิรัติ)</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <label>Food Allergy</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="allergy">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row col-sm-12">
+
+                            <div class="col-sm-6">
+                                <label>Food Allergy</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="allergy" placeholder="อาหารที่แพ้">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="regisFooter">
-                <div class="container">
-                    <div class="row">
-                        <div class="text-wrap">
-                            <h1>Interests*</h1>
-                        </div>
-                        <div class="col-sm-8 col-sm-offset-2">
-                            <input id="interest" class="form-control" placeholder="Javascript PHP Angular ...." required>
-                        </div>
-                    </div>
 
+                <div class="row text-center interest">
+                    <div class="col-lg-12 col-xs-12 text-center topic">
+                        <h1>Interests</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Seperated by ","</p>
+                        <input id="interest" class="form-control"
+                               placeholder="Angular, JavaScript, UX/UI, Food, Startup, ...."
+                               required>
+                    </div>
+                </div>
+
+                <div class="row text-center">
                     <div class="form-group button-wrap">
-                        <button type="submit" class="btn regis-btn hvr-fade">UPDATE</button>
-                        <div class ="regis-loading">
-                          <div class="spinner"></div>
-                          Updating...
+                        <button id="update-btn" type="submit" class="dark-btn hvr-fade">UPDATE</button>
+                        <div id="loading">
+                            <div class="spinner"></div>
+                            Updating...
                         </div>
-
                     </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div id="success-registration" class="container text-center success-registration">
+            <div class="row">
+                <div style="font-size: 30px;">
+                    <i class="fa fa-check fa-5x"></i>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <h2>Update Successfully</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Your registration is successfully updated!</p>
 
-    </form>
-
-    <div class="regisSuccess">
-        <div class="row">
-            <div style="font-size: 30px;">
-                <i class="fa fa-check fa-5x"></i>
+                    <p>In either case, check your name at Who's coming and see you at Barcamp.</p>
+                </div>
+            </div>
+            <div class="row">
+                <button class="dark-btn hvr-fade" role="button"
+                        ng-click="backToEditUser()">BACK
+                </button>
             </div>
         </div>
-        <div class="row">
-            <h2>Update Successfully</h2>
-            <br>
-        </div>
-        <div class="row">
-            <h5>Your registration is successfully updated!</h5>
-        </div>
-        <div class="row">
-            <h5>In either case, check your name at Who's coming and see you at Barcamp.</h5>
-        </div>
-        <div class="row">
-            <br><br>
-            <button class="btn btn-default btn-lg outline btn-back hvr-fade" role="button" ng-click="backToEditUser()">
-                BACK
-            </button>
-        </div>
+
     </div>
-</div>
+</section>
