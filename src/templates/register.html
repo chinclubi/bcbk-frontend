@@ -1,4 +1,4 @@
-<div ng-controller="RegisterController">
+<div ng-controller="RegisterController as regCtrl">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-xs-12 text-center topic">
@@ -8,7 +8,7 @@
     </div>
 
     <div id="register-form" class="container register-form">
-        <form data-toggle="validator" role="form" onsubmit="submitRegistration()">
+        <form data-toggle="validator" role="form" ng-submit="regCtrl.submitRegistration()">
             <div class="row">
 
                 <div name="emailform" class="form-group">
@@ -17,7 +17,7 @@
                             <label>Email*</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="email" class="form-control" id="email" name="email"
+                            <input type="email" class="form-control" ng-model="email" name="email"
                                    data-error="Bruh, that email address is invalid" required>
 
                             <div name="emailformMessage" class="help-block with-errors"></div>
@@ -31,7 +31,7 @@
                             <label>First Name*</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="firstname" required>
+                            <input type="text" class="form-control" ng-model="firstname" required>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                             <label>Last Name*</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="lastname" required>
+                            <input type="text" class="form-control" ng-model="lastname" required>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <label>Gender</label>
                         </div>
                         <div class="col-sm-6">
-                            <select id="gender" class="form-control">
+                            <select ng-model="gender" class="form-control">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
@@ -67,7 +67,7 @@
                             <label>Profession</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="profession">
+                            <input type="text" class="form-control" ng-model="profession">
                         </div>
                     </div>
                 </div>
@@ -78,8 +78,7 @@
                             <label>Workplace</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="workplace">
-                        </div>
+                            <input type="text" class="form-control" ng-model="workplace">
                     </div>
                 </div>
 
@@ -92,7 +91,7 @@
                             <div class="input-group">
                                 <div class="input-group-addon">@</div>
                                 <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15"
-                                       class="form-control" id="twitter" placeholder="">
+                                       class="form-control" ng-model="twitter" placeholder="">
                             </div>
                         </div>
                     </div>
@@ -104,7 +103,7 @@
                             <label>Website</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="website">
+                            <input type="text" class="form-control" ng-model="website">
                         </div>
                     </div>
                 </div>
@@ -115,7 +114,7 @@
                             <label>Food Requirements</label>
                         </div>
                         <div class="col-sm-6">
-                            <select id="food-requirement" class="form-control">
+                            <select ng-model="foodRequirement" class="form-control">
                                 <option value="None">None</option>
                                 <option value="Islam">Islam (อิสลาม)</option>
                                 <option value="Vegeterian">Vegeterian (มังสวิรัติ)</option>
@@ -130,7 +129,7 @@
                             <label>Food Allergy</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="allergy" placeholder="อาหารที่แพ้">
+                                <input type="text" class="form-control" ng-model="allergy" placeholder="แพ้อาหารประเภทไหนบ้าง?">
                         </div>
                     </div>
                 </div>
@@ -142,15 +141,19 @@
                 </div>
                 <div class="col-sm-12">
                     <p>Seperated by ","</p>
-                    <input id="interest" class="form-control"
-                           placeholder="Angular, JavaScript, UX/UI, Food, Startup, ...."
-                           required>
-                </div>
-            </div>
+                                <!-- <input id="interest" class="form-control" placeholder="Javascript PHP Angular ...." required> -->
+                                <ui-select ng-model="regCtrl.interest.selected" tagging tagging-tokens="ENTER|SPACE|,|TAB" multiple>
+                                    <ui-select-match placeholder="Javascript, PHP, Angular ....">{{$item}}</ui-select-match>
+                                    <ui-select-choices style="display: none;" repeat="tmp in regCtrl.tmps | filter:$select.search">
+                                        {{tmp}}
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
 
             <div class="row text-center">
                 <div class="form-group button-wrap">
-                    <button id="register-btn" type="submit" class="dark-btn hvr-fade">REGISTER</button>
+                    <button id="register-btn" ng-disabled="!regCtrl.allowRegister || (regCtrl.interest.selected.length == 0)" type="submit" class="dark-btn hvr-fade">REGISTER</button>
                     <div id="loading">
                         <div class="spinner"></div>
                         Registering...
