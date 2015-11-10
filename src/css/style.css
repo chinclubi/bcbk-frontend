@@ -27,7 +27,12 @@ h1 {
 }
 
 h2 {
+    font-weight: 700;
     margin: 0;
+}
+
+h3 {
+    font-weight: normal;
 }
 
 p {
@@ -111,23 +116,25 @@ img {
     margin: 0;
 }
 
-.cover .white-btn {
-    height: 100%;
-    width: 100%;
-    max-width: 70%;
-    padding: 0.1em 0.5em;
-
-    background-color: transparent;
+.white-btn {
     color: #e8e8e8;
     font-size: 2.4em;
     font-weight: 600;
+    padding: 0.1em 0.5em;
+    background-color: transparent;
     text-decoration: none;
     border: 2px solid #e8e8e8;
 }
 
-.cover .white-btn:hover {
+.white-btn:hover {
     color: #141111;
     background-color: #e8e8e8;
+}
+
+.cover .white-btn {
+    height: 100%;
+    width: 100%;
+    max-width: 70%;
 }
 
 .quick-info-bar {
@@ -228,6 +235,7 @@ img {
 }
 
 .quick-about h1 {
+    font-weight: normal;
     margin: 20px 0 20px;
 }
 
@@ -307,6 +315,10 @@ img {
     background-color: rgba(181, 214, 170, 0.28)
 }
 
+.parking-and-transport .container {
+    margin-bottom: -20px;
+}
+
 .parking-and-transport h2 {
     font-size: 1.75em;
 }
@@ -316,7 +328,7 @@ img {
     color: #f0e6b1;
 }
 
-.parking-and-transport .free-parking {
+.parking-and-transport .content {
     margin-bottom: 20px;
 }
 
@@ -423,5 +435,72 @@ img {
 
 .who-is-coming td:last-child {
     padding-right: 4%;
+}
+
+.register {
+    color: #3d3536;
+}
+
+.register .topic {
+    margin-bottom: 15px;
+}
+
+.register .container {
+    max-width: 600px;
+    margin-bottom: -15px;
+}
+
+.register .row {
+    margin-bottom: 15px;
+}
+
+.register .form-group {
+    margin-bottom: 0;
+}
+
+.register .col-sm-12 {
+    margin-bottom: 15px;
+}
+
+.register label {
+    font-size: 1.1em;
+}
+
+.register ul {
+    margin: 0;
+}
+
+.register .help-block {
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
+.register .interest p {
+    color: #3D3536;
+    opacity: 0.5;
+    margin-bottom: 5px;
+}
+
+.dark-btn {
+    color: #3d3536;
+    font-size: 2em;
+    font-weight: 600;
+    padding: 0.1em 0.5em;
+    background-color: transparent;
+    text-decoration: none;
+    border: 2px solid #3d3536;
+}
+
+.dark-btn:hover {
+    color: #e8e8e8;
+    background-color: #3d3536;
+}
+
+.register .dark-btn {
+    font-size: 1.75em;
+}
+
+.register .fa-check {
+    color: #b5d6aa;
 }
 
