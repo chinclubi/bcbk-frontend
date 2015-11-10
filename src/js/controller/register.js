@@ -1,49 +1,53 @@
 /* global angular */
 
-;
-(function () {
-    angular
-        .module('controller.register', [])
-        .controller('RegisterController', RegisterController)
+;(function () {
+  angular
+    .module('controller.register', ['ui.select'])
+    .config(['uiSelectConfig', function (uiSelectConfig) {
+      uiSelectConfig.theme = 'bootstrap'
+    }])
+    .controller('RegisterController', RegisterController)
 
-    RegisterController.$inject = ['$scope', '$http']
-    function RegisterController($scope, $http) {
-        var self = this
-        var successRegistration = $('#success-registration')
-        var allowRegister = false
-        successRegistration.hide()
-        $('#loading').hide()
-        var checkEmail = function (thisEmail, cb) {
-            if (thisEmail != '') {
-                sendingData = {
-                    email: thisEmail,
-                }
-                $.post(
-                    'http://api.barcampbangkhen.org/checkemail', sendingData,
-                    function (data) {
-                        $('div[name="emailformMessage"]').text('')
-                    }
-                ).success(function () {
-                        allowRegister = true
-                        cb()
-                    })
-                    .fail(function (data) {
-                        if (data.status == 402) {
-                            $('div[name="emailformMessage"]').text('Bruh, that email address is already taken')
-                        }
-                        if (data.status == 401) {
-                            $('div[name="emailformMessage"]').text('Bruh, that email address is invalid')
-                        }
-                        $('div[name="emailform"]').addClass('has-error')
-                        $('#register-btn').addClass('disabled')
+  RegisterController.$inject = ['$scope', '$http']
+  function RegisterController ($scope, $http) {
+    var self = this
+    self.interest = {'selected': []}
+    self.tmps = ['Java', 'DotA2', 'JavaScript', 'PHP', 'Phyton', 'AngularJS', 'NodeJS', 'C++', 'HTML', 'CSS', 'SASS', 'SCSS', 'ruby']
+    var successForm = $('.regisSuccess')
+    self.allowRegister = false
+    successForm.hide()
 
-                    })
-            }
+    $('.regis-loading').hide()
+    var checkEmail = function (thisEmail, cb) {
+      if (thisEmail != '') {
+        sendingData = {
+          email: thisEmail,
         }
-        $('input[name="email"]').focusout(function () {
-            checkEmail(this.value, function () {
-            })
+        $.post(
+          'http://api.barcampbangkhen.org/checkemail', sendingData,
+          function (data) {
+            $('div[name="emailformMessage"]').text('')
+            $('div[name="emailformMessage"]').removeClass('help-block with-errors')
+          }
+        ).success(function () {
+          self.allowRegister = true
+          cb()
         })
+          .fail(function (data) {
+            if (data.status == 402) {
+              $('div[name="emailformMessage"]').text('Bruh, that email address is already taken')
+            }
+            if (data.status == 401) {
+              $('div[name="emailformMessage"]').text('Bruh, that email address is invalid')
+            }
+            $('div[name="emailformMessage"]').addClass('help-block with-errors')
+            $('div[name="emailform"]').addClass('has-error')
+          })
+      }
+    }
+    $('input[name="email"]').focusout(function () {
+      // checkEmail(this.value, function () {})
+    })
 
         $(document).ready(function () {
             var registerForm = $('#register-form')
@@ -60,18 +64,18 @@
             var interestE = $('#interest')
             var elementArr = [firstnameE, lastnameE, genderE, emailE, interestE]
 
-            submitRegistration = function () {
-                if ($('#register-btn').hasClass('disabled')) {
-                    return
-                }
-                if (allowRegister) {
-                    var callBack = function () {
-                        var isEmpty = false
-                        for (var i = 0; i < elementArr.length; i++) {
-                            if (elementArr[i].val() == '') {
-                                isEmpty = true
-                                elementArr[i].effect('shake')
-                                elementArr[i].effect('highlight')
+      submitRegistration = function () {
+        if ( $('.regis-btn').hasClass('disabled')) {
+          return
+        }
+        if (self.allowRegister) {
+          var callBack = function () {
+            var isEmpty = false
+            for (var i = 0; i < elementArr.length; i++) {
+              if (elementArr[i].val() == '') {
+                isEmpty = true
+                elementArr[i].effect('shake')
+                elementArr[i].effect('highlight')
 
                             }
                         }
@@ -131,19 +135,19 @@
                             $('#allergy').val('')
                             $('#interest').val('')
 
-                            $('#loading').hide()
-                            $('#register-btn').show()
-                            successRegistration.fadeOut(function () {
-                                registerForm.fadeIn()
-                                allowRegister = false
-                            })
-                            $('#register-btn').addClass('disabled')
-                        }
-                    }
-                    checkEmail(emailE.val(), callBack)
-                }
+              $('.regis-loading').hide()
+              $('.regis-btn').show()
+              successForm.fadeOut(function () {
+                regisContent.fadeIn()
+                self.allowRegister = false
+              })
+
             }
-        })
-    }
+          }
+        // checkEmail(emailE.val(), callBack)
+        }
+      }
+    })
+  }
 
 })()

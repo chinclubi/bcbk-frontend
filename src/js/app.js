@@ -8,7 +8,8 @@
       'controller.about',
       'controller.register',
       'controller.whoscoming',
-      'controller.edituser'
+      'controller.edituser',
+      'directive.validation'
     // 'directive.navbar'
     ])
 })()
