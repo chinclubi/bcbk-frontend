@@ -446,8 +446,11 @@ img {
 }
 
 .register .container {
-    max-width: 600px;
     margin-bottom: -15px;
+}
+
+.register .register-form {
+    max-width: 600px;
 }
 
 .register .row {

@@ -35,5 +35,11 @@
         controller: 'EditUserController',
         controllerAs: 'EditUserCtrl'
       })
+      .state('about', {
+        url: '/about',
+        templateUrl: 'templates/about.html',
+        controller: 'AboutController',
+        controllerAs: 'AboutCtrl'
+      })
   }
 })()
