@@ -125,6 +125,7 @@
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
                                 <label>Food Allergy</label>
+
                                 <p>(อาหารที่แพ้)</p>
                             </div>
                             <div class="col-sm-6">
@@ -143,7 +144,8 @@
                         <!-- <input id="interest" class="form-control" placeholder="Angular, JavaScript, UX/UI, Food, Startup, ...." required> -->
                         <ui-select ng-model="regCtrl.interest.selected" tagging tagging-tokens="ENTER|SPACE|,|TAB"
                                    multiple>
-                            <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}</ui-select-match>
+                            <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}
+                            </ui-select-match>
                             <ui-select-choices style="display: none;"
                                                repeat="tmp in regCtrl.tmps | filter:$select.search">
                                 {{tmp}}
@@ -158,6 +160,7 @@
                                 ng-disabled="!regCtrl.allowRegister || (regCtrl.interest.selected.length == 0)"
                                 type="submit" class="dark-btn hvr-fade">REGISTER
                         </button>
+                        </div>
                         <div id="loading">
                             <div class="spinner"></div>
                             Registering...

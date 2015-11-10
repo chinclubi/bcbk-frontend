@@ -124,9 +124,8 @@ img {
     color: #e8e8e8;
     font-size: 2.4em;
     font-weight: 600;
-    padding: 0.1em 0.5em;
     background-color: transparent;
-    text-decoration: none;
+    padding: 0.1em 0.5em;
     border: 2px solid #e8e8e8;
 }
 
@@ -139,6 +138,7 @@ img {
     height: 100%;
     width: 100%;
     max-width: 70%;
+    text-decoration: none;
 }
 
 .quick-info-bar {
@@ -436,6 +436,10 @@ img {
 
 .register .dark-btn {
     font-size: 1.75em;
+}
+
+.register #loading {
+    margin-top: 20px;
 }
 
 .register .fa-check {
