@@ -453,6 +453,16 @@ img {
     background-color: #3d3536;
 }
 
+.dark-btn:disabled {
+    color: #aab2bd;
+    font-size: 2em;
+    font-weight: 600;
+    padding: 0.1em 0.5em;
+    background-color: #e6e9ed;
+    text-decoration: none;
+    border: 2px solid #aab2bd;
+}
+
 .register .dark-btn {
     font-size: 1.75em;
 }

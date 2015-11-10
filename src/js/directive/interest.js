@@ -12,18 +12,17 @@
       require: 'ngModel',
       link: function (scope, ele, attrs, c) {
         scope.$watch(attrs.ngModel, function () {
-          if (!checking) {
-            checking = $timeout(function () {
-              console.log(c.$modelValue)
-              if (c.$modelValue.length !== 0) {
-                c.$setValidity('interest', true)
-              } else {
-                c.$setValidity('interest', false)
-              }
-              checking = null
-            }, 500)
-          }
-        })
+          checking = $timeout(function () {
+            if (!c.$modelValue) {
+              c.$setValidity('isEmpty', false)
+            }else if (c.$modelValue.length === 0) {
+              c.$setValidity('isEmpty', false)
+            } else {
+              c.$setValidity('isEmpty', true)
+            }
+            checking = null
+          })
+        }, 500)
       }
     }
   }
