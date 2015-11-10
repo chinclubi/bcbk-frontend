@@ -1,3 +1,44 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand navText page-scroll" href="#main">
+                <p class="nav-brand-text">BarCamp</p>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+
+                <li>
+                    <a class="page-scroll" href="#schedule">
+                        <p class="nav-link-text">Schedule</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#location">
+                        <p class="nav-link-text">Location</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#sponsors">
+                        <p class="nav-link-text">Sponsors</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#register">
+                        <p class="nav-link-text">Register</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="whoscoming({reload:true})">
+                        <p class="nav-link-text">Who's Coming</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="background">
     <img src="/img/main-bg.jpg" class="background-image" height="100%"/>
 </div>
@@ -14,6 +55,6 @@
 
 </section>
 
-<section class="who-is-coming">
+<section class="sub-page-content">
     Content
 </section>
