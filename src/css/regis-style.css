@@ -32,3 +32,9 @@
     font-size: 20px;
 }
 .ui-select-dropdown { display: none !important; }
+.with-error {
+    border-color: #da4453;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}

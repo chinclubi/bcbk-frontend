@@ -9,7 +9,8 @@
       'controller.register',
       'controller.whoscoming',
       'controller.edituser',
-      'directive.validation'
+      'directive.validation',
+      'directive.interestValidation'
     // 'directive.navbar'
     ])
 })()
