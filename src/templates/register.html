@@ -8,7 +8,7 @@
     </div>
 
     <div id="register-form" class="container register-form">
-        <form data-toggle="validator" role="form" ng-submit="regCtrl.submitRegistration()">
+        <form name="register" novalidate ng-submit="regCtrl.regisSubmit()">
             <div class="row">
                 <div name="emailform" class="form-group">
                     <div class="form-row col-sm-12">
@@ -16,13 +16,12 @@
                             <label>Email*</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="email" class="form-control" ng-model="email" name="email"
-                                   data-error="Bruh, that email address is invalid" required>
+                            <input type="email" class="form-control" ng-model="regCtrl.email" name="email"
+                                   emailcheck="regCtrl.email" required/>
 
-                            <div name="emailformMessage" class="help-block with-errors"></div>
+                            <div id="email-status" class="help-block with-errors"></div>
                         </div>
                     </div>
-
                 </div>
                 <div class="form-group">
                     <div class="form-row col-sm-12">
@@ -30,57 +29,57 @@
                             <label>First Name*</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" ng-model="firstname" required>
+                            <input type="text" name="firstname" class="form-control" ng-model="regCtrl.firstname"
+                                   required/>
+
+                            <div id="firstname-status" class="help-block with-errors"></div>
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="form-row col-sm-12">
                         <div class="col-sm-6">
                             <label>Last Name*</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" ng-model="lastname" required>
+                            <input type="text" name="lastname" class="form-control" ng-model="regCtrl.lastname"
+                                   required/>
+
+                            <div id="lastname-status" class="help-block with-errors"></div>
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="form-row col-sm-12">
                         <div class="col-sm-6">
                             <label>Gender</label>
                         </div>
                         <div class="col-sm-6">
-                            <select ng-model="gender" class="form-control">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
+                            <select ng-model="regCtrl.gender.data"
+                                    ng-options="v for v in regCtrl.gender.availableGender" class="form-control">
                             </select>
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="form-row col-sm-12">
                         <div class="col-sm-6">
                             <label>Profession</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" ng-model="profession">
+                            <input type="text" class="form-control" ng-model="regCtrl.profession">
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="form-row col-sm-12">
                         <div class="col-sm-6">
                             <label>Workplace</label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" ng-model="workplace">
+                            <input type="text" class="form-control" ng-model="regCtrl.workplace">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
@@ -90,33 +89,29 @@
                                 <div class="input-group">
                                     <div class="input-group-addon">@</div>
                                     <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15"
-                                           class="form-control" ng-model="twitter" placeholder="">
+                                           class="form-control" ng-model="regCtrl.twitter" placeholder="">
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
                                 <label>Website</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" ng-model="website">
+                                <input type="text" class="form-control" ng-model="regCtrl.website">
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6 ">
-                                <label>Food Requirements</label>
+                                <label>Special meals</label>
                             </div>
                             <div class="col-sm-6">
-                                <select ng-model="foodRequirement" class="form-control">
-                                    <option value="None">None</option>
-                                    <option value="Islam">Islam (อิสลาม)</option>
-                                    <option value="Vegeterian">Vegeterian (มังสวิรัติ)</option>
+                                <select ng-model="regCtrl.foodRequirement.data"
+                                        ng-options="v for v in regCtrl.foodRequirement.available" class="form-control">
                                 </select>
                             </div>
                         </div>
@@ -129,37 +124,31 @@
                                 <p>(อาหารที่แพ้)</p>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" ng-model="allergy">
+                                <input type="text" class="form-control" ng-model="regCtrl.allergy">
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="row text-center interest">
-                    <div class="col-lg-12 col-xs-12 text-center topic">
-                        <h1>Interests</h1>
+                    <div class="row text-center interest">
+                        <div class="col-lg-12 col-xs-12 text-center topic">
+                            <h1>Interests</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            <p>Seperated by ","</p>
+                            <!-- <input id="interest" class="form-control" placeholder="Angular, JavaScript, UX/UI, Food, Startup, ...." required> -->
+                            <ui-select ng-model="regCtrl.interest.selected" tagging tagging-tokens="ENTER|SPACE|,|TAB"
+                                       multiple>
+                                <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}
+                                </ui-select-match>
+                                <ui-select-choices style="display: none;"
+                                                   repeat="tmp in regCtrl.tmps | filter:$select.search">
+                                    {{tmp}}
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
                     </div>
-                    <div class="col-sm-12">
-                        <p>Seperated by ","</p>
-                        <!-- <input id="interest" class="form-control" placeholder="Angular, JavaScript, UX/UI, Food, Startup, ...." required> -->
-                        <ui-select ng-model="regCtrl.interest.selected" tagging tagging-tokens="ENTER|SPACE|,|TAB"
-                                   multiple>
-                            <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}
-                            </ui-select-match>
-                            <ui-select-choices style="display: none;"
-                                               repeat="tmp in regCtrl.tmps | filter:$select.search">
-                                {{tmp}}
-                            </ui-select-choices>
-                        </ui-select>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="form-group button-wrap">
-                        <button id="register-btn"
-                                ng-disabled="!regCtrl.allowRegister || (regCtrl.interest.selected.length == 0)"
-                                type="submit" class="dark-btn hvr-fade">REGISTER
-                        </button>
+                    <div class="row text-center">
+                        <div class="form-group button-wrap">
+                            <button id="register-btn" type="submit" class="dark-btn hvr-fade">REGISTER</button>
                         </div>
                         <div id="loading">
                             <div class="spinner"></div>
@@ -168,6 +157,13 @@
                     </div>
                 </div>
             </div>
+            <code>register.email.$valid = {{register.email.$valid}}</code><br>
+            <code>register.email.$error = {{register.email.$error}}</code><br>
+            <code>register.firstname.$valid = {{register.firstname.$valid}}</code><br>
+            <code>register.lastname.$valid = {{register.lastname.$valid}}</code><br>
+            <code>register.interest.$valid = {{register.interest.$valid}}</code><br>
+            <code>register.$valid = {{register.$valid}}</code><br>
+            <code>register.$error.required = {{!!register.$error.required}}</code><br>
         </form>
     </div>
 
