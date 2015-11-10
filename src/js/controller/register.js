@@ -49,7 +49,7 @@
       self.lastname = $scope.initial
       self.gender.data = 'Male'
       self.profession = $scope.initial
-      self.foodRequirement.selected = 'None'
+      self.foodRequirement.data = 'None'
       self.allergy = $scope.initial
       self.interest.selected = []
       self.twitter = $scope.initial
@@ -109,7 +109,7 @@
           'lastname': self.lastname,
           'gender': self.gender.data,
           'profession': self.profession,
-          'food_req': self.foodRequirement.selected,
+          'food_req': self.foodRequirement.data,
           'food_allergy': self.allergy,
           'interests': strInterest,
           'twitter': self.twitter,

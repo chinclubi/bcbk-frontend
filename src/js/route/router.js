@@ -33,7 +33,7 @@
         url: '/editprofile?email&c',
         templateUrl: 'templates/edituser.html',
         controller: 'EditUserController',
-        controllerAs: 'EditUserCtrl'
+        controllerAs: 'editCtrl'
       })
       .state('about', {
         url: '/about',

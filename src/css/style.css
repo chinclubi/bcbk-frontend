@@ -520,7 +520,7 @@ img {
 }
 
 .who-is-coming .content {
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .who-is-coming table {

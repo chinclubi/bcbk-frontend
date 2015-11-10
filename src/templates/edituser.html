@@ -57,18 +57,17 @@
 
 <section class="sub-page-content register">
     <div ng-controller="EditUserController">
-
         <div id="register-form" class="container register-form">
-            <form data-toggle="validator" role="form" onsubmit="submitRegistration()">
+            <form name="edit" novalidate ng-submit="editCtrl.submit()">
                 <div class="row basic-info">
 
                     <div name="emailform" class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
-                                <label>Email*</label>
+                                <label>Email</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="email" class="form-control" id="email" name="email"
+                                <input type="email" class="form-control" ng-model="editCtrl.email" name="email"
                                        data-error="The email cannot be changed" disabled>
                             </div>
                         </div>
@@ -77,10 +76,15 @@
                     <div class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
-                                <label>First Name*</label>
+                                <label>First Name <span style="color: red;">*</span></label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="firstname" required>
+                                <input type="text" ng-class="{'with-error':edit.firstname.$invalid && edit.firstname.$dirty, 'with-success':edit.firstname.$valid && edit.firstname.$dirty}" name="firstname" class="form-control" ng-model="editCtrl.firstname" required>
+                            <span ng-show="edit.firstname.$dirty && edit.firstname.$invalid">
+                                <div id="lastname-status" class="help-block with-error-txt" ng-show="edit.firstname.$error.required">
+                                Firstname is empty
+                                </div>
+                            </span>
                             </div>
                         </div>
                     </div>
@@ -88,10 +92,13 @@
                     <div class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
-                                <label>Last Name*</label>
+                                <label>Last Name <span style="color: red;">*</span></label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="lastname" required>
+                                <input type="text" ng-class="{'with-error':edit.lastname.$invalid && edit.lastname.$dirty, 'with-success':edit.lastname.$valid && edit.lastname.$dirty}" name="lastname" class="form-control" ng-model="editCtrl.lastname" required>
+                            <span ng-show="edit.lastname.$dirty && edit.lastname.$invalid">
+                            <div id="lastname-status" class="help-block with-error-txt" ng-show="edit.lastname.$error.required">Lastname is empty</div>
+                            </span>
                             </div>
                         </div>
                     </div>
@@ -102,10 +109,9 @@
                                 <label>Gender</label>
                             </div>
                             <div class="col-sm-6">
-                                <select id="gender" class="form-control">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
+                                <select ng-model="editCtrl.gender.data"
+                                    ng-options="v for v in editCtrl.gender.availableGender" class="form-control">
+                            </select>
                             </div>
                         </div>
                     </div>
@@ -116,7 +122,7 @@
                                 <label>Profession</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="profession">
+                                <input type="text" class="form-control" ng-model="editCtrl.profession">
                             </div>
                         </div>
                     </div>
@@ -127,7 +133,7 @@
                                 <label>Workplace</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="workplace">
+                                <input type="text" class="form-control" ng-model="editCtrl.workplace">
                             </div>
                         </div>
                     </div>
@@ -141,7 +147,7 @@
                                 <div class="input-group">
                                     <div class="input-group-addon">@</div>
                                     <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15"
-                                           class="form-control" id="twitter" placeholder="">
+                                           class="form-control" ng-model="editCtrl.twitter" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -153,7 +159,7 @@
                                 <label>Website</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="website">
+                                <input type="text" class="form-control" ng-model="editCtrl.website">
                             </div>
                         </div>
                     </div>
@@ -164,10 +170,8 @@
                                 <label>Special meals</label>
                             </div>
                             <div class="col-sm-6">
-                                <select id="food-requirement" class="form-control">
-                                    <option value="None">None</option>
-                                    <option value="Islam">Islam (อิสลาม)</option>
-                                    <option value="Vegeterian">Vegeterian (มังสวิรัติ)</option>
+                                <select ng-model="editCtrl.foodRequirement.data"
+                                        ng-options="v for v in editCtrl.foodRequirement.available" class="form-control">
                                 </select>
                             </div>
                         </div>
@@ -181,23 +185,37 @@
                                 <p>(อาหารที่แพ้)</p>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="allergy">
+                                <input type="text" class="form-control" ng-model="editCtrl.allergy">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row text-center interest">
-                    <div class="col-lg-12 col-xs-12 text-center topic">
-                        <h1>Interests</h1>
+                <div class="row text-center interest" ng-class="{'interest-with-error':edit.interest.$invalid && edit.interest.$dirty, 'interest-with-success':edit.interest.$valid && edit.interest.$dirty}">
+                        <div class="col-lg-12 col-xs-12 text-center topic">
+                            <h1>Interests <span style="color: red;">*</span></h1>
+                        </div>
+                        <div class="col-sm-12">
+                            <p>Seperated by ","</p>
+                            <ui-select 
+                                name="interest"  
+                                class = "text-left"
+                                ng-model="editCtrl.interest.selected" 
+                                tagging tagging-tokens="ENTER|,|TAB" 
+                                interest="editCtrl.interest.selected" multiple> 
+                                <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}
+                                </ui-select-match>
+                                <ui-select-choices style="display: none;" repeat="tmp in editCtrl.tmps | filter:$select.search">
+                                    {{tmp}}
+                                </ui-select-choices>
+                            </ui-select>
+                            <span ng-show="edit.interest.$dirty && edit.interest.$invalid">
+                                <div id="interest-status" class="help-block with-error-txt" ng-show="edit.interest.$error.isEmpty">
+                                    Interest is empty
+                                </div>
+                            </span>
+                        </div>
                     </div>
-                    <div class="col-sm-12">
-                        <p>Seperated by ","</p>
-                        <input id="interest" class="form-control"
-                               placeholder="Angular, JavaScript, UX/UI, Food, Startup, ...."
-                               required>
-                    </div>
-                </div>
 
                 <div class="row text-center">
                     <div class="form-group button-wrap">
@@ -224,13 +242,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <p>Your registration is successfully updated!</p>
-
-                    <p>In either case, check your name at Who's coming and see you at Barcamp.</p>
+                    <br />
+                    <p>In either case, check your name at <b>Who's coming</b> and see you at BarCamp Bangkhen 6.</p>
                 </div>
             </div>
             <div class="row">
                 <button class="dark-btn hvr-fade" role="button"
-                        ng-click="backToEditUser()">BACK
+                        ng-click="editCtrl.editpage()">BACK
                 </button>
             </div>
         </div>
