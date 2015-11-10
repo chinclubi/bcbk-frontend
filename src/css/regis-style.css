@@ -1,44 +1,8 @@
-<<<<<<< HEAD
 .ui-select-dropdown { display: none !important; }
-=======
-.header {
-    background-image: url(background-header.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    font-family: monospace;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    font-size: 50px;
-    text-shadow: -2px 0 black, 0 3px black, 2px 0 black, 0 -2px black;
-}
 
-.regisSuccess {
-    text-align: center;
-}
-
-.fa-check {
-    color: #b5d6aa;
-}
-
-.btn.outline {
-    background: none;
-    padding: 12px 22px;
-    border-radius: 0;
-}
-
-.btn-default.outline {
-    border: 2px solid #000000;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-}
-.ui-select-dropdown { display: none !important; }
 .with-error {
     border-color: #da4453;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
->>>>>>> 09eecadf8493455d0cadd58d5c8e2e4453afebf8
