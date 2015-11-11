@@ -76,13 +76,13 @@
                     <div class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
-                                <label>First Name <span style="color: red;">*</span></label>
+                                <label>First Name <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" ng-class="{'with-error':edit.firstname.$invalid && edit.firstname.$dirty, 'with-success':edit.firstname.$valid && edit.firstname.$dirty}" name="firstname" class="form-control" ng-model="editCtrl.firstname" required>
                             <span ng-show="edit.firstname.$dirty && edit.firstname.$invalid">
-                                <div id="lastname-status" class="help-block with-error-txt" ng-show="edit.firstname.$error.required">
-                                Firstname is empty
+                                <div id="firstname-status" class="help-block with-error-txt" ng-show="edit.firstname.$error.required">
+                                    Please enter your first name.
                                 </div>
                             </span>
                             </div>
@@ -92,12 +92,14 @@
                     <div class="form-group">
                         <div class="form-row col-sm-12">
                             <div class="col-sm-6">
-                                <label>Last Name <span style="color: red;">*</span></label>
+                                <label>Last Name <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" ng-class="{'with-error':edit.lastname.$invalid && edit.lastname.$dirty, 'with-success':edit.lastname.$valid && edit.lastname.$dirty}" name="lastname" class="form-control" ng-model="editCtrl.lastname" required>
                             <span ng-show="edit.lastname.$dirty && edit.lastname.$invalid">
-                            <div id="lastname-status" class="help-block with-error-txt" ng-show="edit.lastname.$error.required">Lastname is empty</div>
+                            <div id="lastname-status" class="help-block with-error-txt" ng-show="edit.lastname.$error.required">
+                                Please enter your last name.
+                            </div>
                             </span>
                             </div>
                         </div>
@@ -193,7 +195,7 @@
 
                 <div class="row text-center interest" ng-class="{'interest-with-error':edit.interest.$invalid && edit.interest.$dirty, 'interest-with-success':edit.interest.$valid && edit.interest.$dirty}">
                         <div class="col-lg-12 col-xs-12 text-center topic">
-                            <h1>Interests <span style="color: red;">*</span></h1>
+                            <h1>Interests <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></h1>
                         </div>
                         <div class="col-sm-12">
                             <p>Seperated by ","</p>
@@ -211,7 +213,7 @@
                             </ui-select>
                             <span ng-show="edit.interest.$dirty && edit.interest.$invalid">
                                 <div id="interest-status" class="help-block with-error-txt" ng-show="edit.interest.$error.isEmpty">
-                                    Interest is empty
+                                    Please share your interest to us.
                                 </div>
                             </span>
                         </div>
