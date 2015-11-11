@@ -15,6 +15,11 @@ body {
     min-height: 100%;
     min-width: 100%;
     background-color: transparent;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-image:url(../img/main-bg.jpg);
+    background-size:cover;
+    background-attachment: fixed;
 }
 
 div {
