@@ -19,11 +19,6 @@
     color: white;
 }
 
-.btn-back.hvr-fade:hover, .btn-back.hvr-fade:focus, .btn-back.hvr-fade:active {
-    background-color: #d2d9c2;
-    color: black;
-}
-
 .spinner {
   width: 40px;
   height: 40px;

@@ -9,23 +9,27 @@
 
     <div id="register-form" class="container register-form">
         <form name="register" novalidate ng-submit="regCtrl.regisSubmit()">
-            <div class="row">
+            <div class="row basic-info">
                 <div name="emailform" class="form-group">
                     <div class="form-row col-sm-12">
                         <div class="col-sm-6">
                             <label>Email <span style="color: red;">*</span></label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="email" ng-class="{'with-error':register.email.$invalid && register.email.$dirty, 'with-success':register.email.$valid && register.email.$dirty}" class="form-control" ng-model="regCtrl.email" name="email" emailcheck="regCtrl.email" required>
+                            <input type="email"
+                                   ng-class="{'with-error':register.email.$invalid && register.email.$dirty, 'with-success':register.email.$valid && register.email.$dirty}"
+                                   class="form-control" ng-model="regCtrl.email" name="email" emailcheck="regCtrl.email"
+                                   required>
                             <span ng-show="register.email.$dirty && register.email.$invalid">
                                 <div class="help-block with-error-txt" ng-show="register.email.$error.required">
-                                    Email is empty
+                                    Please enter your email address.
                                 </div>
-                                <div class="help-block with-error-txt" ng-show="register.email.$error.email || register.email.$error.emailvalid">
-                                    Email format is invalid
+                                <div class="help-block with-error-txt"
+                                     ng-show="register.email.$error.email || register.email.$error.emailvalid">
+                                    Email address in invalid format.
                                 </div>
                                 <div class="help-block with-error-txt" ng-show="register.email.$error.emailsame">
-                                    Email address is already taken
+                                    This email address has already been registered.
                                 </div>
                             </span>
                         </div>
@@ -37,10 +41,13 @@
                             <label>First Name <span style="color: red;">*</span></label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" ng-class="{'with-error':register.firstname.$invalid && register.firstname.$dirty, 'with-success':register.firstname.$valid && register.firstname.$dirty}" name="firstname" class="form-control" ng-model="regCtrl.firstname" required>
+                            <input type="text"
+                                   ng-class="{'with-error':register.firstname.$invalid && register.firstname.$dirty, 'with-success':register.firstname.$valid && register.firstname.$dirty}"
+                                   name="firstname" class="form-control" ng-model="regCtrl.firstname" required>
                             <span ng-show="register.firstname.$dirty && register.firstname.$invalid">
-                                <div id="lastname-status" class="help-block with-error-txt" ng-show="register.firstname.$error.required">
-                                Firstname is empty
+                                <div id="lastname-status" class="help-block with-error-txt"
+                                     ng-show="register.firstname.$error.required">
+                                    Please enter your first name.
                                 </div>
                             </span>
                         </div>
@@ -52,9 +59,14 @@
                             <label>Last Name <span style="color: red;">*</span></label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" ng-class="{'with-error':register.lastname.$invalid && register.lastname.$dirty, 'with-success':register.lastname.$valid && register.lastname.$dirty}" name="lastname" class="form-control" ng-model="regCtrl.lastname" required>
+                            <input type="text"
+                                   ng-class="{'with-error':register.lastname.$invalid && register.lastname.$dirty, 'with-success':register.lastname.$valid && register.lastname.$dirty}"
+                                   name="lastname" class="form-control" ng-model="regCtrl.lastname" required>
                             <span ng-show="register.lastname.$dirty && register.lastname.$invalid">
-                            <div id="lastname-status" class="help-block with-error-txt" ng-show="register.lastname.$error.required">Lastname is empty</div>
+                            <div id="lastname-status" class="help-block with-error-txt"
+                                 ng-show="register.lastname.$error.required">
+                                Please enter your last name.
+                            </div>
                             </span>
                         </div>
                     </div>
@@ -90,88 +102,93 @@
                             <input type="text" class="form-control" ng-model="regCtrl.workplace">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-row col-sm-12">
-                            <div class="col-sm-6">
-                                <label>Twitter</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="input-group">
-                                    <div class="input-group-addon">@</div>
-                                    <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15"
-                                           class="form-control" ng-model="regCtrl.twitter" placeholder="">
-                                </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row col-sm-12">
+                        <div class="col-sm-6">
+                            <label>Twitter</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-addon">@</div>
+                                <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15"
+                                       class="form-control" ng-model="regCtrl.twitter" placeholder="">
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-row col-sm-12">
-                            <div class="col-sm-6">
-                                <label>Website</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" ng-model="regCtrl.website">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row col-sm-12">
+                        <div class="col-sm-6">
+                            <label>Website</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" ng-model="regCtrl.website">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-row col-sm-12">
-                            <div class="col-sm-6 ">
-                                <label>Special meals</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <select ng-model="regCtrl.foodRequirement.data"
-                                        ng-options="v for v in regCtrl.foodRequirement.available" class="form-control">
-                                </select>
-                            </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row col-sm-12">
+                        <div class="col-sm-6 ">
+                            <label>Special meals</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <select ng-model="regCtrl.foodRequirement.data"
+                                    ng-options="v for v in regCtrl.foodRequirement.available" class="form-control">
+                            </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-row col-sm-12">
-                            <div class="col-sm-6">
-                                <label>Food Allergy</label>
+                </div>
+                <div class="form-group">
+                    <div class="form-row col-sm-12">
+                        <div class="col-sm-6">
+                            <label>Food Allergy</label>
 
-                                <p>(อาหารที่แพ้)</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" ng-model="regCtrl.allergy">
-                            </div>
+                            <p>(อาหารที่แพ้)</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" ng-model="regCtrl.allergy">
                         </div>
                     </div>
-                    <div class="row text-center interest" ng-class="{'interest-with-error':register.interest.$invalid && register.interest.$dirty, 'interest-with-success':register.interest.$valid && register.interest.$dirty}">
-                        <div class="col-lg-12 col-xs-12 text-center topic">
-                            <h1>Interests <span style="color: red;">*</span></h1>
-                        </div>
-                        <div class="col-sm-12">
-                            <p>Seperated by ","</p>
-                            <ui-select 
-                                name="interest"  
-                                class = "text-left"
-                                ng-model="regCtrl.interest.selected" 
-                                tagging tagging-tokens="ENTER|,|TAB" 
-                                interest="regCtrl.interest.selected" multiple> 
-                                <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}
-                                </ui-select-match>
-                                <ui-select-choices style="display: none;" repeat="tmp in regCtrl.tmps | filter:$select.search">
-                                    {{tmp}}
-                                </ui-select-choices>
-                            </ui-select>
+                </div>
+            </div>
+            <div class="row text-center interest"
+                 ng-class="{'interest-with-error':register.interest.$invalid && register.interest.$dirty, 'interest-with-success':register.interest.$valid && register.interest.$dirty}">
+                <div class="col-lg-12 col-xs-12 text-center topic">
+                    <h1>Interests</h1>
+                </div>
+                <div class="col-sm-12">
+                    <p>Seperated by ","</p>
+                    <ui-select
+                            name="interest"
+                            class="text-left"
+                            ng-model="regCtrl.interest.selected"
+                            tagging tagging-tokens="ENTER|,|TAB"
+                            interest="regCtrl.interest.selected" multiple>
+                        <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}
+                        </ui-select-match>
+                        <ui-select-choices style="display: none;"
+                                           repeat="tmp in regCtrl.tmps | filter:$select.search">
+                            {{tmp}}
+                        </ui-select-choices>
+                    </ui-select>
                             <span ng-show="register.interest.$dirty && register.interest.$invalid">
-                            <div id="interest-status" class="help-block with-error-txt" ng-show="register.lastname.$error.required">
-                                Interest is empty
+                            <div id="interest-status" class="help-block with-error-txt"
+                                 ng-show="register.lastname.$error.required">
+                                Please share with us about your interest.
                             </div>
                             </span>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="form-group button-wrap">
-                            <button ng-model="submitBtn" ng-disabled="!register.$valid" id="register-btn" type="submit" class="dark-btn hvr-fade" emailcheck="regCtrl.email">REGISTER</button>
-                        </div>
-                        <div id="loading">
-                            <div class="spinner"></div>
-                            Registering...
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="form-group button-wrap">
+                    <button ng-model="submitBtn" ng-disabled="!register.$valid" id="register-btn" type="submit"
+                            class="dark-btn hvr-fade" emailcheck="regCtrl.email">REGISTER
+                    </button>
+                </div>
+                <div id="loading">
+                    <div class="spinner"></div>
+                    Registering...
                 </div>
             </div>
         </form>
@@ -189,9 +206,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <p>Thank you for registering your interest in BarCamp Bangkhen 6.</p>
-                <br />
+                <br/>
+
                 <p><b>Please check your email address that you receive the code for registration at the event.</b></p>
-                <br />
+                <br/>
+
                 <p>If you miss an email, please contact info@barcampbangkhen.org.</p>
             </div>
         </div>
