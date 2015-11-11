@@ -62,19 +62,23 @@
     }
 
     function submit () {
-      form.registerBtn.fadeOut(function () {
-        form.registerLoad.fadeIn()
-      })
-      checkEmail().then(function () {
-        var strInterest = self.interest.selected.join()
-        register(strInterest).then(function (res, status) {
-          form.registerForm.fadeOut(function () {
-            form.registerLoad.hide()
-            form.successForm.fadeIn()
-            $scope.register.$setPristine()
-          })
-        }, function (res, status) {})
-      }, function (status) {})
+      if ($scope.register.$invalid) {
+        console.log($scope.register.$error)
+      } else {
+        form.registerBtn.fadeOut(function () {
+          form.registerLoad.fadeIn()
+        })
+        checkEmail().then(function () {
+          var strInterest = self.interest.selected.join()
+          register(strInterest).then(function (res, status) {
+            form.registerForm.fadeOut(function () {
+              form.registerLoad.hide()
+              form.successForm.fadeIn()
+              $scope.register.$setPristine()
+            })
+          }, function (res, status) {})
+        }, function (status) {})
+      }
     }
 
     function checkEmail () {
