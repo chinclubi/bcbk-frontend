@@ -412,7 +412,7 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12 col-sm-12 computer-eng-logo">
-                <img class="center-block img-responsive" src="img/ComputerEngineering.png">
+                <img class="center-block img-responsive" src="img/ComputerEngineering-reducesize.png">
 
                 <h2 class="computer-eng">ENGINEERING</h2>
 
@@ -500,30 +500,22 @@
 <section id="footer" class="footer" ng-include src="'templates/footer.html'"></section>
 <script>
     $(document).ready(function () {
-        var resizeFunction = function () {
-
-        }
+        var resizeFunction = function () {}
         resizeFunction();
         $(window).resize(resizeFunction);
-
         var G = google.maps;
-
         var center = new G.LatLng(13.846458, 100.5695385)
-
         mapOptions = {
             scrollwheel: false,
             zoom: 15,
             center: center,
             mapTypeId: G.MapTypeId.ROADMAP
         }
-
         var map = new G.Map(document.getElementById("map"), mapOptions)
-
         var marker = new G.Marker({
             position: center,
             map: map,
             title: 'IUP International Building 17'
         })
-
     });
 </script>
