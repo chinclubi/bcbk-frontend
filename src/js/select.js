@@ -565,14 +565,6 @@
         ctrl.close = function (skipFocusser) {
           if (!ctrl.open) return
           if (ctrl.ngModel && ctrl.ngModel.$setTouched) ctrl.ngModel.$setTouched()
-          // ChinCluBi
-          var isUnique = true
-          for (var i = 0; i < ctrl.ngModel.$modelValue.length; i++) {
-            if (ctrl.ngModel.$modelValue[i] === ctrl.search) isUnique = false
-          }
-          if (isUnique) {
-            ctrl.ngModel.$modelValue.push(ctrl.search) // Push When Focus out by ChinCluBi
-          }
           _resetSearchInput()
           ctrl.open = false
 
@@ -1539,6 +1531,9 @@
         }
 
         $select.searchInput.on('blur', function () {
+          if ($select.search && $select.search !== '') {
+            $select.select($select.search, true)
+          }
           $timeout(function () {
             $selectMultiple.activeMatchIndex = -1
           })
