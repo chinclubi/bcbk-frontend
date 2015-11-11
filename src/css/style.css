@@ -92,11 +92,19 @@ img {
 }
 
 .navbar li:hover {
-    background-color: #e8e8e8;
+    background-color: rgba(232, 232, 232, 0.9);
 }
 
 .navbar li:hover p {
     color: rgba(20, 17, 17, 0.9);
+}
+
+.navbar .container .nav-brand-text {
+    color: #f4f1e2;
+}
+
+.navbar .container .bold {
+    font-weight: 700;
 }
 
 .container {
@@ -156,6 +164,7 @@ img {
 .quick-info-bar .quick-info {
     height: 100%;
     color: #e8e8e8;
+    font-weight: 600;
     font-size: 1.2em;
     background-color: transparent;
 }
@@ -243,6 +252,7 @@ img {
 }
 
 .quick-about {
+    /*background-color: #f4f1e2;*/
     background-color: #e8e8e8;
 }
 
@@ -331,6 +341,10 @@ img {
     margin-bottom: -20px;
 }
 
+.parking-and-transport p {
+    font-size: 14px;
+}
+
 .parking-and-transport h2 {
     font-size: 1.75em;
 }
@@ -342,6 +356,16 @@ img {
 
 .parking-and-transport .content {
     margin-bottom: 20px;
+}
+
+.parking-and-transport .free {
+    font-weight: 700;
+    color: #f39d6f;
+}
+
+.parking-and-transport .instruction {
+    font-style: italic;
+    color: #f4f1e2;
 }
 
 .sponsor {
@@ -376,7 +400,8 @@ img {
 
 .register {
     color: #3d3536;
-    background-color: #e8e8e8;
+    background-color: #f4f1e2;
+    /*background-color: #e8e8e8;*/
 }
 
 .register .topic {
@@ -498,15 +523,12 @@ img {
     margin-bottom: 2%;
 }
 
-.footer {
-    background-color: #141111;
-}
-
 /*----------------------------------------------*/
 /* SUB PAGES
 /*----------------------------------------------*/
 
 .sub-page-cover {
+    padding: 110px 0 60px;
     color: #e8e8e8;
 }
 
@@ -515,7 +537,7 @@ img {
 }
 
 .who-is-coming {
-    /*background-color: #e8e8e8;*/
+    padding: 3% 0 0;
 }
 
 .who-is-coming .container {
@@ -574,4 +596,41 @@ img {
 
 .who-is-coming td:last-child {
     padding-right: 4%;
+}
+
+.footer {
+
+}
+
+.footer .contact {
+    width: 100%;
+    height: 100%;
+    color: #f4f1e2;
+    background-color: #3d3536;
+}
+
+.footer .power-by {
+    padding: 10px 0;
+    color: #555;
+    width: 100%;
+    height: 100%;
+    background-color: #141111;
+}
+
+.footer .circle {
+    color: #f4f1e2;
+    padding: .4em;
+    width: 2.8em;
+    height: 2.8em;
+    background: #70584B;
+    -moz-border-radius: 1.4em;
+    -webkit-border-radius: 1.4em;
+    border-radius: 1.4em;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.footer .circle:hover {
+    opacity: 0.9;
 }

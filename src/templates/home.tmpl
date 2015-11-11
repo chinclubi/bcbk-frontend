@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header page-scroll">
             <a class="navbar-brand navText page-scroll" href="#main">
-                <p class="nav-brand-text">BarCamp</p>
+                <p class="nav-brand-text">{bcbk}</p>
             </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -81,7 +81,7 @@
                         <i class="fa fa-map-marker fa-5x"></i>
                     </div>
                     <div class="col-xs-8 col-sm-8 col-md-8 info">
-                        <p>IUP Building 17</br>
+                        <p>IUP International Building 17</br>
                             Kasetsart University</p>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                 <h1>LOCATION</h1>
             </div>
             <div class="col-lg-12 col-xs-12 place">
-                <p>IUP Building 17</p>
+                <p>IUP International Building 17</p>
 
                 <p>Kasetsart University</p>
             </div>
@@ -294,7 +294,8 @@
                 <div class="sub-topic">
                     <h3>Ngam Wong Wan 1 Parking Building</h3>
                     <ul>
-                        <li>Price: 10THB/hr</li>
+                        <li class="free">Price with bcbk stamp: FREE</li>
+                        <li>Price without bcbk stamp: 10THB/hr</li>
                         <li>Location: Ngam Wong Wan 1 entrance</li>
                         <li>Capacity: 210</li>
                     </ul>
@@ -303,14 +304,15 @@
                 <div class="sub-topic">
                     <h3>Ngam Wong Wan 2 Parking Building</h3>
                     <ul>
-                        <li>Price: 10THB/hr</li>
+                        <li class="free">Price with bcbk stamp: FREE</li>
+                        <li>Price without bcbk stamp: 10THB/hr</li>
                         <li>Location: Ngam Wong Wan 2 entrance</li>
                         <li>Capacity: 192</li>
                     </ul>
                 </div>
 
-                <p>For the above locations please collect a parking stamp at the event to be
-                    eligible for 20THB parking from the entire period of 8.00AM - 4.30PM</p>
+                <p class="instruction">For the above locations please collect a parking stamp at the event to be
+                    eligible for FREE parking from the entire period of 8.00 AM - 4.30 PM</p>
 
                 <div class="sub-topic">
                     <h3>Vibhavadi Parking Building</h3>
@@ -360,7 +362,7 @@
                 </div>
 
 
-                <p>Illegal or double parking may result in wheel clamp and 500THB fine imposed.</p>
+                <p class="instruction">Illegal or double parking may result in wheel clamp and 500 THB fine imposed.</p>
             </div>
 
             <div class="col-lg-6 content">
@@ -491,33 +493,29 @@
 
 <section id="register" class="register section" ng-include src="'templates/register.html'"></section>
 
-<section id="social" class="social section">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 fb">
-                <div class="fb-page" data-href="https://www.facebook.com/Barcampbangkhen/" data-width="500"
-                     data-height="600" data-small-header="false"
-                     data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
-                     data-show-posts="true">
-                    <div class="fb-xfbml-parse-ignore">
-                        <blockquote cite="https://www.facebook.com/Barcampbangkhen/"><a
-                                href="https://www.facebook.com/Barcampbangkhen/">BarCamp Bangkhen</a></blockquote>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <a class="twitter-timeline" href="https://twitter.com/barcampbangkhen"
-                   data-widget-id="663303621296066561">Tweets by @barcampbangkhen</a>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section id="social" class="social section">-->
+    <!--<div class="container text-center">-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-6 col-sm-12 col-xs-12 fb">-->
+                <!--<div class="fb-page" data-href="https://www.facebook.com/Barcampbangkhen/" data-width="500"-->
+                     <!--data-height="600" data-small-header="false"-->
+                     <!--data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"-->
+                     <!--data-show-posts="true">-->
+                    <!--<div class="fb-xfbml-parse-ignore">-->
+                        <!--<blockquote cite="https://www.facebook.com/Barcampbangkhen/"><a-->
+                                <!--href="https://www.facebook.com/Barcampbangkhen/">BarCamp Bangkhen</a></blockquote>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+                <!--<a class="twitter-timeline" href="https://twitter.com/barcampbangkhen"-->
+                   <!--data-widget-id="663303621296066561">Tweets by @barcampbangkhen</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
 
-<section id="footer" class="footer section">
-    <div class="container">
-        c 2015 BARCAMP BANGKHEN CONTACT US: (email) CONNECT WITH US: (fb twitter)
-    </div>
-</section>
+<section id="footer" class="footer" ng-include src="'templates/footer.html'"></section>
 
 <script>
     (function (d, s, id) {
