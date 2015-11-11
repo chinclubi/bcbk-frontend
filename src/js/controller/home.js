@@ -40,11 +40,12 @@
         event.preventDefault()
       })
     })
-
-    $('.nav a').each(function () {
-      $(this).on('click', function () {
-        $('.navbar-toggle').click()
+    if ($(window).width() < 768) {
+      $('.nav a').each(function () {
+        $(this).on('click', function () {
+          $('.navbar-toggle').click()
+        })
       })
-    })
+    }
   }
 })()

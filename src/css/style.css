@@ -331,6 +331,12 @@ img {
     background-color: #141111;
 }
 
+@media screen and (max-width: 767px) {
+    .map {
+        height: 200px;
+    }   
+}
+
 .parking-and-transport {
     color: #e8e8e8;
     /*background-color: #99A37A;*/
