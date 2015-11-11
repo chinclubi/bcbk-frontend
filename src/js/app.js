@@ -17,10 +17,10 @@
     ])
 })()
 $(function () {
-  var bg = jQuery('.background')
-  jQuery(window).resize('resizeBackground')
+  var bg = $('#bg')
+  $(window).resize('resizeBackground')
   function resizeBackground () {
-    bg.height(jQuery(window).height() + 60)
+    bg.height($(window).height() + 60)
   }
   resizeBackground()
 })
