@@ -45,7 +45,7 @@
                                    ng-class="{'with-error':register.firstname.$invalid && register.firstname.$dirty, 'with-success':register.firstname.$valid && register.firstname.$dirty}"
                                    name="firstname" class="form-control" ng-model="regCtrl.firstname" required>
                             <span ng-show="register.firstname.$dirty && register.firstname.$invalid">
-                                <div id="lastname-status" class="help-block with-error-txt"
+                                <div id="firstname-status" class="help-block with-error-txt"
                                      ng-show="register.firstname.$error.required">
                                     Please enter your first name.
                                 </div>
