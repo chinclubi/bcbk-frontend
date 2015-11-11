@@ -15,12 +15,9 @@
       'directive.interestValidation'
     // 'directive.navbar'
     ])
+  $(window).resize(function () {
+    console.log('resize')
+    $('#bg').height($(window).height())
+  })
+
 })()
-$(function () {
-  var bg = $('#bg')
-  $(window).resize('resizeBackground')
-  function resizeBackground () {
-    bg.height($(window).height() + 60)
-  }
-  resizeBackground()
-})
