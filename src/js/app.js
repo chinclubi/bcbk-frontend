@@ -1,4 +1,6 @@
 /* global angular */
+/* global $ */
+/* global jQuery */
 
 ;(function () {
   angular
@@ -14,3 +16,11 @@
     // 'directive.navbar'
     ])
 })()
+$(function () {
+  var bg = jQuery('.background')
+  jQuery(window).resize('resizeBackground')
+  function resizeBackground () {
+    bg.height(jQuery(window).height() + 60)
+  }
+  resizeBackground()
+})
