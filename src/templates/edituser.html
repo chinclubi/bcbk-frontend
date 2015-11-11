@@ -10,22 +10,22 @@
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 
                 <li>
-                    <a class="page-scroll" href="#schedule">
+                    <a class="page-scroll" ui-sref="home({section: 'schedule'})">
                         <p class="nav-link-text">Schedule</p>
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#location">
+                    <a class="page-scroll" ui-sref="home({section: 'location'})">
                         <p class="nav-link-text">Location</p>
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#sponsors">
+                    <a class="page-scroll" ui-sref="home({section: 'sponsors'})">
                         <p class="nav-link-text">Sponsors</p>
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#register">
+                    <a class="page-scroll" ui-sref="home({section: 'register'})">
                         <p class="nav-link-text">Register</p>
                     </a>
                 </li>
@@ -252,6 +252,11 @@
                 <button class="dark-btn hvr-fade" role="button"
                         ng-click="editCtrl.editpage()">BACK
                 </button>
+                <a ui-sref="whoscoming">
+                    <button class="dark-btn hvr-fade" role="button">
+                        WHO'S COMING
+                    </button>
+                </a>
             </div>
         </div>
 

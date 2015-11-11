@@ -1,14 +1,18 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header page-scroll">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand navText page-scroll" href="#main">
                 <p class="nav-brand-text">{bcbk}</p>
             </a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
-                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-
                 <li>
                     <a class="page-scroll" href="#schedule">
                         <p class="nav-link-text">Schedule</p>
@@ -538,7 +542,6 @@
 }(document, "script", "twitter-wjs");</script>
 <script>
     $(document).ready(function () {
-        // console.log("XXX " + $(this).width());
         var resizeFunction = function () {
 
         }

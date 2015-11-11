@@ -1,31 +1,37 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header page-scroll">
-            <a class="navbar-brand navText page-scroll" href="#main">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand navText page-scroll" ui-sref="home">
                 <p class="nav-brand-text">{bcbk}</p>
             </a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 
                 <li>
-                    <a class="page-scroll" href="#schedule">
+                    <a class="page-scroll" ui-sref="home({section: 'schedule'})">
                         <p class="nav-link-text">Schedule</p>
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#location">
+                    <a class="page-scroll" ui-sref="home({section: 'location'})">
                         <p class="nav-link-text">Location</p>
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#sponsors">
+                    <a class="page-scroll" ui-sref="home({section: 'sponsors'})">
                         <p class="nav-link-text">Sponsors</p>
                     </a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#register">
+                    <a class="page-scroll" ui-sref="home({section: 'register'})">
                         <p class="nav-link-text">Register</p>
                     </a>
                 </li>

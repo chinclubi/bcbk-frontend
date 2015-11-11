@@ -46,6 +46,12 @@
     form.registerLoad.hide()
     form.successForm.hide()
 
+    $('.nav a').each(function () {
+      $(this).on('click', function () {
+        $('.navbar-toggle').click()
+      })
+    })
+
     function editpage () {
       form.successForm.fadeOut(function () {
         form.registerForm.fadeIn()
