@@ -38,3 +38,12 @@
     color: #b5d6aa;
     font-weight: 700;
 }
+
+.register .glyphicon {
+    padding-left: 6px;
+    color: #da4a5c;
+}
+
+.register h1 .glyphicon {
+    font-size: 0.8em;
+}
