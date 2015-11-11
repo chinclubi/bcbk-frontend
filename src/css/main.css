@@ -70,7 +70,7 @@ p {
     -webkit-transition-property: color, background-color;
     transition-property: color, background-color;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .navbar-collapse {
         background-color: rgba(20, 17, 17, 0.9);
     }
