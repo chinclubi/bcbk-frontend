@@ -63,7 +63,23 @@
 
     function submit () {
       if ($scope.register.$invalid) {
-        console.log($scope.register.$error)
+        if ($scope.register.$error.required) {
+          angular.forEach($scope.register.$error.required, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.register.$error.email) {
+          angular.forEach($scope.register.$error.email, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.register.$error.emailvalid) {
+          angular.forEach($scope.register.$error.emailvalid, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.register.$error.emailsame) {
+          angular.forEach($scope.register.$error.emailsame, function (value, key) {
+            value.$setDirty(true)
+          })
+        }
       } else {
         form.registerBtn.fadeOut(function () {
           form.registerLoad.fadeIn()
