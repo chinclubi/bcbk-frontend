@@ -62,19 +62,39 @@
     }
 
     function submit () {
-      form.registerBtn.fadeOut(function () {
-        form.registerLoad.fadeIn()
-      })
-      checkEmail().then(function () {
-        var strInterest = self.interest.selected.join()
-        register(strInterest).then(function (res, status) {
-          form.registerForm.fadeOut(function () {
-            form.registerLoad.hide()
-            form.successForm.fadeIn()
-            $scope.register.$setPristine()
+      if ($scope.register.$invalid) {
+        if ($scope.register.$error.required) {
+          angular.forEach($scope.register.$error.required, function (value, key) {
+            value.$setDirty(true)
           })
-        }, function (res, status) {})
-      }, function (status) {})
+        } else if ($scope.register.$error.email) {
+          angular.forEach($scope.register.$error.email, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.register.$error.emailvalid) {
+          angular.forEach($scope.register.$error.emailvalid, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.register.$error.emailsame) {
+          angular.forEach($scope.register.$error.emailsame, function (value, key) {
+            value.$setDirty(true)
+          })
+        }
+      } else {
+        form.registerBtn.fadeOut(function () {
+          form.registerLoad.fadeIn()
+        })
+        checkEmail().then(function () {
+          var strInterest = self.interest.selected.join()
+          register(strInterest).then(function (res, status) {
+            form.registerForm.fadeOut(function () {
+              form.registerLoad.hide()
+              form.successForm.fadeIn()
+              $scope.register.$setPristine()
+            })
+          }, function (res, status) {})
+        }, function (status) {})
+      }
     }
 
     function checkEmail () {

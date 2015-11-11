@@ -14,11 +14,11 @@
         scope.$watch(attrs.ngModel, function () {
           checking = $timeout(function () {
             if (!c.$modelValue) {
-              c.$setValidity('isEmpty', false)
+              c.$setValidity('required', false)
             }else if (c.$modelValue.length === 0) {
-              c.$setValidity('isEmpty', false)
+              c.$setValidity('required', false)
             } else {
-              c.$setValidity('isEmpty', true)
+              c.$setValidity('required', true)
             }
             checking = null
           })

@@ -54,17 +54,37 @@
     }
 
     function submit () {
-      form.registerBtn.fadeOut(function () {
-        form.registerLoad.fadeIn()
-      })
-      var strInterest = self.interest.selected.join()
-      edit(strInterest).then(function (res, status) {
-        form.registerForm.fadeOut(function () {
-          form.registerLoad.hide()
-          form.successForm.fadeIn()
-          $scope.$$childHead.edit.$setPristine()
+      if ($scope.$$childHead.edit.$invalid) {
+        if ($scope.$$childHead.edit.$error.required) {
+          angular.forEach($scope.register.$error.required, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.$$childHead.edit.$error.email) {
+          angular.forEach($scope.register.$error.email, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.$$childHead.edit.$error.emailvalid) {
+          angular.forEach($scope.register.$error.emailvalid, function (value, key) {
+            value.$setDirty(true)
+          })
+        } else if ($scope.$$childHead.edit.$error.emailsame) {
+          angular.forEach($scope.register.$error.emailsame, function (value, key) {
+            value.$setDirty(true)
+          })
+        }
+      } else {
+        form.registerBtn.fadeOut(function () {
+          form.registerLoad.fadeIn()
         })
-      }, function (res, status) {})
+        var strInterest = self.interest.selected.join()
+        edit(strInterest).then(function (res, status) {
+          form.registerForm.fadeOut(function () {
+            form.registerLoad.hide()
+            form.successForm.fadeIn()
+            $scope.$$childHead.edit.$setPristine()
+          })
+        }, function (res, status) {})
+      }
     }
 
     function edit (strInterest) {
@@ -112,130 +132,9 @@
         self.website = response.data.website
         self.interest.selected = response.data.interests.split(',')
       }).error(function (response, status) {
-        console.log(response)
         $state.go('home')
       })
     }
-
-    //   var registerForm = $('#register-form')
-    //   var successForm = $('#success-registration')
-    //   successForm.hide()
-    //   $('#loading').hide()
-
-    //   $(window).scroll(function () {
-    //     if ($('.navbar').offset().top > 50) {
-    //       $('.navbar-fixed-top').addClass('top-nav-collapse')
-    //     } else {
-    //       $('.navbar-fixed-top').removeClass('top-nav-collapse')
-    //     }
-    //   })
-
-    //   $(document).ready(function () {
-    //     var apiURL = 'http://api.barcampbangkhen.org/valid?'
-    //     $http.get(apiURL + 'email=' + urlEmail + '&unique_code=' + urlCode).success(function (response) {
-    //       if (response.allow == true) {
-    //         $('#firstname').val(response.data.firstname)
-    //         $('#lastname').val(response.data.lastname)
-    //         $('#gender').val(response.data.gender)
-    //         $('#profession').val(response.data.profession)
-    //         $('#workplace').val(response.data.workplace)
-    //         $('#email').val(urlEmail)
-    //         $('#twitter').val(response.data.twitter)
-    //         $('#website').val(response.data.website)
-    //         $('#food-requirement').val(response.data.food_req)
-    //         $('#allergy').val(response.data.food_allergy)
-    //         $('#interest').val(response.data.interests)
-    //       } else {
-    //         $location.path('/home')
-    //       }
-    //     }).error(function (data, status) {
-    //       console.log('Error status : ' + status)
-    //       $location.path('/home')
-    //     })
-
-    //     var firstnameE = $('#firstname')
-    //     var lastnameE = $('#lastname')
-    //     var genderE = $('#gender')
-    //     var professionE = $('#profession')
-    //     var workplaceE = $('#workplace')
-    //     var emailE = $('#email')
-    //     var twitterE = $('#twitter')
-    //     var websiteE = $('#website')
-    //     var food_reqE = $('#food-requirement')
-    //     var food_allergyE = $('#allergy')
-    //     var interestE = $('#interest')
-    //     var elementArr = [firstnameE, lastnameE, genderE, emailE, food_reqE, interestE]
-
-    //     submitRegistration = function () {
-    //       if ($('.update-btn').hasClass('disabled')) {
-    //         return
-    //       }
-    //       var isEmpty = false
-    //       for (var i = 0; i < elementArr.length; i++) {
-    //         if (elementArr[i].val() == '') {
-    //           isEmpty = true
-    //           elementArr[i].effect('shake')
-    //           elementArr[i].effect('highlight')
-
-    //         }
-    //       }
-    //       if (!isEmpty) {
-    //         var firstnamex = firstnameE.val()
-    //         var lastnamex = lastnameE.val()
-    //         var genderx = genderE.val()
-    //         var professionx = professionE.val()
-    //         var workplacex = workplaceE.val()
-    //         var emailx = emailE.val()
-    //         var twitterx = twitterE.val()
-    //         var websitex = websiteE.val()
-    //         var food_reqx = food_reqE.val()
-    //         var food_allergyx = food_allergyE.val()
-    //         var interestx = interestE.val()
-
-    //         var sendingData = {
-    //           firstname: firstnamex,
-    //           lastname: lastnamex,
-    //           gender: genderx,
-    //           profession: professionx,
-    //           workplace: workplacex,
-    //           email: emailx,
-    //           twitter: twitterx,
-    //           website: websitex,
-    //           food_req: food_reqx,
-    //           food_allergy: food_allergyx,
-    //           interests: interestx,
-    //           unique_code: urlCode,
-    //         }
-    //         $('#update-btn').fadeOut(function () {
-    //           $('#loading').fadeIn()
-    //         })
-
-    //         $.post(
-    //           'http://api.barcampbangkhen.org/edit', sendingData,
-    //           function (data) {
-    //             console.log(data)
-    //             registerForm.fadeOut(function () {
-    //               successForm.fadeIn()
-    //             })
-
-    //           }
-    //         ).fail(function (data) {
-    //           console.log(data)
-    //         })
-
-    //       }
-
-    //       $scope.backToEditUser = function () {
-    //         $('#loading').hide()
-    //         $('#update-btn').show()
-    //         successForm.fadeOut(function () {
-    //           registerForm.fadeIn()
-    //         })
-
-    //       }
-
-  //     }
-  //   })
   }
 
 })()
