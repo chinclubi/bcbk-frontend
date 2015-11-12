@@ -333,7 +333,7 @@ img {
 @media screen and (max-width: 767px) {
     .map {
         height: 200px;
-    }   
+    }
 }
 
 .parking-and-transport {
@@ -379,6 +379,21 @@ img {
 
 .sponsor img {
     max-height: 250px;
+}
+
+@media (max-width: 767px) {
+    .sponsor .platinum {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .sponsor .platinum img {
+        max-height: 300px;
+    }
+
+    .sponsor .gold img {
+        max-height: 200px;
+    }
 }
 
 .sponsor .computer-eng {
@@ -450,7 +465,7 @@ img {
 }
 
 .register .form-control:focus {
-    border-color: rgba(112,88,75,.6);
+    border-color: rgba(112, 88, 75, .6);
     /*border-color: #70584b;*/
     /*box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(153,163,122,.4);*/
     box-shadow: none;
@@ -573,6 +588,7 @@ img {
     border-spacing: 0 4px;
     border-collapse: separate;
 }
+
 .who-is-coming th {
     border: none;
     padding: 5px 15px;
@@ -596,6 +612,7 @@ img {
 .who-is-coming td {
     padding: 5px 15px;
 }
+
 /*
 .who-is-coming td:first-child {
     padding-left: 4%;
@@ -640,4 +657,10 @@ img {
 
 .footer .circle:hover {
     opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+    .footer .con {
+        text-align: center;
+    }
 }
