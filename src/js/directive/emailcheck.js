@@ -12,12 +12,12 @@
       require: 'ngModel',
       link: function (scope, ele, attrs, c) {
         var checkEmail = function () {
-          if (!checking && c.$modelValue) {
+          var emailValue = c.$modelValue
+          if (!checking && emailValue) {
             checking = $timeout(function () {
               $http({
-                method: 'POST',
-                url: 'http://api.barcampbangkhen.org/checkemail',
-                data: {'email': c.$modelValue}
+                method: 'GET',
+                url: 'http://api.barcampbangkhen.org/checkemail?email=' + emailValue
               }).success(function (response, status) {
                 c.$setValidity('emailvalid', true)
                 c.$setValidity('emailsame', true)

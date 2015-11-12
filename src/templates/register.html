@@ -18,6 +18,7 @@
                         <div class="col-sm-6">
                             <input type="email"
                                    ng-class="{'with-error':register.email.$invalid && register.email.$dirty, 'with-success':register.email.$valid && register.email.$dirty}"
+                                   ng-pattern = "/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{1,5})$/"
                                    class="form-control" ng-model="regCtrl.email" name="email" emailcheck="regCtrl.email"
                                    required>
                             <span ng-show="register.email.$dirty && register.email.$invalid">
@@ -25,7 +26,7 @@
                                     Please enter your email address.
                                 </div>
                                 <div class="help-block with-error-txt"
-                                     ng-show="register.email.$error.email || register.email.$error.emailvalid">
+                                     ng-show="register.email.$error.email || register.email.$error.emailvalid || register.email.$error.pattern">
                                     Email address is invalid format.
                                 </div>
                                 <div class="help-block with-error-txt" ng-show="register.email.$error.emailsame">
@@ -163,6 +164,7 @@
                             class="text-left"
                             ng-model="regCtrl.interest.selected"
                             tagging tagging-tokens="ENTER|,|TAB"
+                            search-enabled="false"
                             interest="regCtrl.interest.selected" multiple>
                         <ui-select-match placeholder="Angular, JavaScript, UX/UI, Food, Startup, ....">{{$item}}
                         </ui-select-match>
@@ -173,7 +175,7 @@
                     </ui-select>
                             <span ng-show="register.interest.$dirty && register.interest.$invalid">
                             <div id="interest-status" class="help-block with-error-txt"
-                                 ng-show="register.lastname.$error.required">
+                                 ng-show="register.interest.$error.empty">
                                 Please share your interest to us.
                             </div>
                             </span>

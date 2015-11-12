@@ -100,9 +100,8 @@
     function checkEmail () {
       var deferred = $q.defer()
       $http({
-        method: 'POST',
-        url: 'http://api.barcampbangkhen.org/checkemail',
-        data: {'email': self.email}
+        method: 'GET',
+        url: 'http://api.barcampbangkhen.org/checkemail?email=' + self.email
       }).success(function (response, status) {
         $scope.register.$setValidity('emailvalid', true)
         $scope.register.$setValidity('emailsame', true)
