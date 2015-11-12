@@ -292,7 +292,7 @@
                 <h2>PAID PARKING</h2>
 
                 <div class="sub-topic">
-                    <h3>Ngam Wong Wan 1 Parking Building</h3>
+                    <h3>(A) Ngam Wong Wan 1 Parking Building</h3>
                     <ul>
                         <li class="free">Price with bcbk stamp: FREE</li>
                         <li>Price without bcbk stamp: 10THB/hr</li>
@@ -302,7 +302,7 @@
                 </div>
 
                 <div class="sub-topic">
-                    <h3>Ngam Wong Wan 2 Parking Building</h3>
+                    <h3>(B) Ngam Wong Wan 2 Parking Building</h3>
                     <ul>
                         <li class="free">Price with bcbk stamp: FREE</li>
                         <li>Price without bcbk stamp: 10THB/hr</li>
@@ -315,7 +315,7 @@
                     eligible for FREE parking from the entire period of 8.00 AM - 9.00 PM</p>
 
                 <div class="sub-topic">
-                    <h3>Vibhavadi Parking Building</h3>
+                    <h3>(C) Vibhavadi Parking Building</h3>
                     <ul>
                         <li>Price: 10THB/hr</li>
                         <li>Location: Vibhavadi entrance</li>
@@ -324,7 +324,7 @@
                 </div>
 
                 <div class="sub-topic">
-                    <h3>Bangkhen Parking Building</h3>
+                    <h3>(D) Bangkhen Parking Building</h3>
                     <ul>
                         <li>Price: 10THB/hr</li>
                         <li>Location: Behind KU Golden Jubilee building</li>
@@ -338,7 +338,7 @@
                 <h2>FREE PARKING</h2>
 
                 <div class="sub-topic">
-                    <h3>LH1 Parking</h3>
+                    <h3>(E) LH1 Parking</h3>
                     <ul>
                         <li>Location: Lecture Hall 1 (LH1)</li>
                         <li>Capacity: 30</li>
@@ -346,7 +346,7 @@
                 </div>
 
                 <div class="sub-topic">
-                    <h3>Basketball Field Parking</h3>
+                    <h3>(F) Basketball Field Parking</h3>
                     <ul>
                         <li>Location: Opposite of Computer Engineering Building</li>
                         <li>Capacity: 40</li>
@@ -354,7 +354,7 @@
                 </div>
 
                 <div class="sub-topic">
-                    <h3>Jakbandhu Building Parking</h3>
+                    <h3>(G) Jakbandhu Building Parking</h3>
                     <ul>
                         <li>Location: Behind Jakbandhu building</li>
                         <li>Capacity: 150</li>
@@ -513,5 +513,55 @@
             map: map,
             title: 'IUP International Building 17'
         })
+
+        var Basketball = new G.Marker({
+            position: new G.LatLng(13.846062, 100.567658),
+            map: map,
+            label: 'F',
+            title: 'Basketball Field Parking'
+        })
+
+        var ngam1 = new G.Marker({
+            position: new G.LatLng(13.842940, 100.570658),
+            map: map,
+            label: 'A',
+            title: 'Ngam Wong Wan 1'
+        })
+
+        var ngam2 = new G.Marker({
+            position: new G.LatLng(13.843564, 100.569517),
+            map: map,
+            label: 'B',
+            title: 'Ngam Wong Wan 2'
+        })
+
+        var lh1 = new G.Marker({
+            position: new G.LatLng(13.846803, 100.570714),
+            map: map,
+            label: 'E',
+            title: 'Lecture Hall 1'
+        })
+
+        var jb = new G.Marker({
+            position: new G.LatLng(13.849192, 100.567605),
+            map: map,
+            label: 'G',
+            title: ''
+        })
+
+        var vipa = new G.Marker({
+            position: new G.LatLng(13.851802, 100.564459),
+            map: map,
+            label: 'C',
+            title: ''
+        })
+
+        var bk = new G.Marker({
+            position: new G.LatLng(13.854023, 100.570661),
+            map: map,
+            label: 'D',
+            title: ''
+        })
+
     });
 </script>
