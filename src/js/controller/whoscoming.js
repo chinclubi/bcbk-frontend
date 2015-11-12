@@ -44,7 +44,6 @@
     }
     $http.get('http://api.barcampbangkhen.org/all').success(function (response) {
       self.interests = []
-      console.log(response)
       var data = response.data.reverse()
       data = data.map(function (person) {
         person.name = person.firstname + ' ' + person.lastname
