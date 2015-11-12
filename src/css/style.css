@@ -561,8 +561,10 @@ img {
     margin-right: 5px;
 }
 
-.who-is-coming .content {
-    overflow: scroll;
+@media (max-width: 806px) {
+    .who-is-coming .content {
+        overflow-x: scroll;
+    }
 }
 
 .who-is-coming table {
