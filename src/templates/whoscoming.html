@@ -79,8 +79,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="person in WhoscomingCtrl.find(WhoscomingCtrl.people, WhoscomingCtrl.filter.selected)">
-                <td class="index">{{$index+1}}.</td>
+            <tr ng-repeat="person in list = WhoscomingCtrl.find(WhoscomingCtrl.people, WhoscomingCtrl.filter.selected)">
+                <td class="index">{{list.length - $index}}</td>
                 <td>
                     <div ng-bind="person.name"></div>
                     <small ng-if="person.profession || person.workplace">

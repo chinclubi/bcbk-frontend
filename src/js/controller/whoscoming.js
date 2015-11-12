@@ -42,9 +42,11 @@
         })
       })
     }
-    $http.get('http://api.barcampbangkhen.org/all').success(function (data) {
+    $http.get('http://api.barcampbangkhen.org/all').success(function (response) {
       self.interests = []
-      data = data.data.map(function (person) {
+      console.log(response)
+      var data = response.data.reverse()
+      data = data.map(function (person) {
         person.name = person.firstname + ' ' + person.lastname
         person.interests = person.interests.split(/[ ]*,[ ]*/)
         person.interests.forEach(function (interest) {
