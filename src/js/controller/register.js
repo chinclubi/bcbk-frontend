@@ -80,6 +80,11 @@
             value.$setDirty(true)
           })
         }
+        if ($scope.register.$error.empty) {
+          angular.forEach($scope.register.$error.empty, function (value, key) {
+            value.$setDirty(true)
+          })
+        }
       } else {
         form.registerBtn.fadeOut(function () {
           form.registerLoad.fadeIn()

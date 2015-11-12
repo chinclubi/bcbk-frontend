@@ -18,7 +18,7 @@
                         <div class="col-sm-6">
                             <input type="email"
                                    ng-class="{'with-error':register.email.$invalid && register.email.$dirty, 'with-success':register.email.$valid && register.email.$dirty}"
-                                   ng-pattern = "/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{1,5})$/"
+                                   ng-pattern = "/^[_A-Za-z0-9]+(\.[_A-Za-z0-9]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,5})$/"
                                    class="form-control" ng-model="regCtrl.email" name="email" emailcheck="regCtrl.email"
                                    required>
                             <span ng-show="register.email.$dirty && register.email.$invalid">
