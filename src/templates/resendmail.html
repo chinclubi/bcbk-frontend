@@ -108,13 +108,10 @@
                 </div>
                 <span ng-show="resendCtrl.submit.isSubmit">
                     <div class="help-block with-error-txt" ng-show="resendCtrl.submit.status === 403">
-                        This email does not exist (<b>{{self.email}}</b>). Please create your new accout
+                        This email does not exist (<b>{{resendCtrl.email}}</b>). Please create your new accout.
                     </div>
                     <div class="help-block with-error-txt" ng-show="resendCtrl.submit.status === 405">
-                        Cannot send email to <b>{{self.email}}</b>. Please contact info@barcampbangkhen.org
-                    </div>
-                    <div class="help-block with-success-txt" ng-show="resendCtrl.submit.status === 200">
-                        Send Successful message to <b>{{self.email}}</b>. (If you miss email, check spam or trash box)
+                        Cannot send email to <b>{{resendCtrl.email}}</b>. Please contact info@barcampbangkhen.org.
                     </div>
                 </span>
             </div>
@@ -128,19 +125,20 @@
             </div>
         </div>
         <div class="row">
-            <h2>Update Successfully</h2>
+            <h2>Resend Successfully</h2>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <p>Your registration is successfully updated!</p>
+                <p>Your registration email is successfully resent!</p>
                 <br />
-                <p>In either case, check your name at <b>Who's coming</b> and see you at BarCamp Bangkhen 6.</p>
+                <p>Please check your email. (If you miss email, check spam or trash box)</p>
             </div>
         </div>
         <div class="row">
-            <button class="dark-btn hvr-fade" role="button"
-                    ng-click="resendCtrl.editpage()">BACK
-            </button>
+            <a ui-sref="home">
+                <button class="dark-btn hvr-fade" role="button">HOME
+                </button>
+            </a>
             <a ui-sref="whoscoming">
                 <button class="dark-btn hvr-fade" role="button">
                     WHO'S COMING

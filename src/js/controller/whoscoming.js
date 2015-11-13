@@ -26,6 +26,15 @@
     })
 
     var self = this
+    self.url = function (url) {
+      if (url === null)
+        return
+      var http = url.substring(0, 4)
+      if (http !== 'http') {
+        return 'http://' + url
+      }
+      return url
+    }
     self.people = []
     self.interests = []
     self.filter = {'selected': []}

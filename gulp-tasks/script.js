@@ -21,6 +21,6 @@ gulp.task('script-with-angular', function () {
     // './bower_components/ui-select/dist/select.js',
     './src/js/**/*.js'])
     .pipe(concat('scripts-with-angular.js'))
-    // .pipe(uglify({mangle: false}))
+    .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./www/js'))
 })

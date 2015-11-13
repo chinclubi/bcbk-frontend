@@ -35,7 +35,6 @@
     form.successForm.hide()
 
     function resend () {
-      self.submit.isSubmit = true
       if ($scope.resend.$invalid) {
         if ($scope.resend.$error.required) {
           angular.forEach($scope.resend.$error.required, function (value, key) {
@@ -51,6 +50,9 @@
           })
         }
       } else {
+        form.resendBtn.hide()
+        form.load.show()
+        self.submit.isSubmit = true
         $http({
           method: 'POST',
           url: 'http://api.barcampbangkhen.org/resend',
@@ -59,9 +61,16 @@
             response: self.response
           }
         }).success(function (response, status) {
+          form.resendForm.fadeOut(function () {
+            form.load.hide()
+            form.successForm.fadeIn()
+          })
           self.submit.status = status
         }).error(function (response, status) {
           self.submit.status = status
+          form.load.fadeOut(function () {
+            form.resendBtn.fadeIn()
+          })
           if (status === 404) {
             vcRecaptchaService.reload(self.widgetId)
           }
