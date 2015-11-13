@@ -1,11 +1,11 @@
 /* global angular */
 
 ;(function () {
-    angular
-        .module('services.route', ['ui.router'])
-        .config(config)
+  angular
+    .module('services.route', ['ui.router'])
+    .config(config)
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider']
+  config.$inject = ['$stateProvider', '$urlRouterProvider']
 
   function config ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when('', '/home')
@@ -28,6 +28,12 @@
         templateUrl: 'templates/edituser.html',
         controller: 'EditUserController',
         controllerAs: 'editCtrl'
+      })
+      .state('resendmail', {
+        url: '/resend',
+        templateUrl: 'templates/resendmail.html',
+        controller: 'ResendMailController',
+        controllerAs: 'resendCtrl'
       })
       .state('about', {
         url: '/about',

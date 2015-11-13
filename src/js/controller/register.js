@@ -71,6 +71,10 @@
           angular.forEach($scope.register.$error.email, function (value, key) {
             value.$setDirty(true)
           })
+        } else if ($scope.register.$error.pattern) {
+          angular.forEach($scope.register.$error.patter, function (value, key) {
+            value.$setDirty(true)
+          })
         } else if ($scope.register.$error.emailvalid) {
           angular.forEach($scope.register.$error.emailvalid, function (value, key) {
             value.$setDirty(true)

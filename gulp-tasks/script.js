@@ -17,9 +17,10 @@ gulp.task('script-with-angular', function () {
     './bower_components/bootstrap/dist/js/bootstrap.js',
     './bower_components/angular/angular.js',
     './bower_components/angular-ui-router/release/angular-ui-router.js',
+    './bower_components/angular-recaptcha/release/angular-recaptcha.js',
     // './bower_components/ui-select/dist/select.js',
     './src/js/**/*.js'])
     .pipe(concat('scripts-with-angular.js'))
-    .pipe(uglify({mangle: false}))
+    // .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./www/js'))
 })

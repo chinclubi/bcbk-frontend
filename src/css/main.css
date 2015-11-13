@@ -75,3 +75,7 @@ p {
         background-color: rgba(20, 17, 17, 0.9);
     }
 }
+.g-recaptcha {
+    margin: 0 auto;
+    width: 304px;
+}

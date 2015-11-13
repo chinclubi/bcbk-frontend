@@ -430,6 +430,7 @@ img {
 .register {
     color: #3d3536;
     background-color: #f4f1e2;
+    min-height: 53%;
     /*background-color: #e8e8e8;*/
 }
 

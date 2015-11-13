@@ -34,6 +34,11 @@
                     </a>
                 </li>
                 <li>
+                    <a ui-sref="resendmail">
+                        <p class="nav-link-text">Resend Email</p>
+                    </a>
+                </li>
+                <li>
                     <a ui-sref="whoscoming({reload:true})">
                         <p class="nav-link-text">Who's Coming</p>
                     </a>
@@ -98,7 +103,7 @@
                     </span>
                 </td>
                 <td>
-                    <a ng-href="{{person.website}}" ng-bind="person.website"></a>
+                    <a ng-href="{{person.website}}" target="_blank" ng-bind="person.website"></a>
                 </td>
             </tr>
             </tbody>
