@@ -66,6 +66,14 @@
     <div id="resend-form" class="container register-form">
         <form name="resend" novalidate ng-submit="resendCtrl.resend()">
             <div class="row basic-info">
+                <div class="interest">
+                    <p>
+                        Missing the email? Try checking your spam and thrash folder before requesting a resend.
+                    </p>
+                    <p>กรุณาตรวจสอบในโฟลเดอร์อีเมล์ขยะ หรือ สแปมก่อนส่งอีเมล์อีกครั้ง</p>
+                    <br>
+                </div>
+                <br>
                 <div name="emailform" class="form-group">
                     <div class="form-row col-sm-12">
                         <div class="col-sm-6">
@@ -131,7 +139,7 @@
             <div class="col-sm-12">
                 <p>Your registration email is successfully resent!</p>
                 <br />
-                <p>Please check your email. (If you miss email, check spam or trash box)</p>
+                <p>Please check your email. (If you miss email, check your spam or trash folder)</p>
             </div>
         </div>
         <div class="row">
