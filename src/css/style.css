@@ -311,6 +311,12 @@ img {
     color: #70584B;
 }
 
+.schedule .activity-note {
+    font-style: italic;
+    font-weight: 400;
+    color: #70584B;
+}
+
 .location {
     /*background-color: transparent;*/
     background-color: rgba(181, 214, 170, 0.28)

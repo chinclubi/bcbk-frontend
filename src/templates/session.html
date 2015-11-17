@@ -1,0 +1,141 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand navText page-scroll" ui-sref="home">
+                <p class="nav-brand-text">bcbk</p>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="page-scroll" ui-sref="home({section: 'schedule'})">
+                        <p class="nav-link-text">Schedule</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" ui-sref="home({section: 'location'})">
+                        <p class="nav-link-text">Location</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" ui-sref="home({section: 'sponsors'})">
+                        <p class="nav-link-text">Sponsors</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" ui-sref="home({section: 'register'})">
+                        <p class="nav-link-text">Register</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="resendmail">
+                        <p class="nav-link-text">Resend Email</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="whoscoming({reload:true})">
+                        <p class="nav-link-text">Who's Coming</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="sub-page-cover section">
+
+    <div class="container topic">
+        <div class="row">
+            <div class="col-lg-12 col-xs-12 text-center topic">
+                <h1>SESSION</h1>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="sub-page-content register">
+    <div class="block block-sessions" ng-app="bcbk5" ng-controller="SessionController">
+        <div class="container">
+            <h4>Sessions</h4>
+            <noscript>
+                <iframe id="sessioniframe" src="http://api.2014.barcampbangkhen.org/session/render" seamless frameborder="0"></iframe>
+            </noscript>
+        </div>
+        <div id="sessiontable">
+            <div class="announce">
+                Barcamp Bangkhen 5 Timetable
+            </div>
+            <ol class="sessionlist">
+                <li ng-repeat-start="session in sessions track by session.id" ng-init="changed = session.slot != $parent.lastslot; $parent.lastslot = changed ? session.slot : $parent.lastslot" class="announce" ng-show="changed &amp;&amp; session.slot == '13:00 - 13:30'">
+                    12.10 - 13.00 :  Lunch
+                </li>
+                <li class="announce" ng-show="changed &amp;&amp; session.slot == '15:20 - 15:50'">15.00 - 15.20 : Break</li>
+                <li class="timesection" ng-show="changed">{{session.slot}}</li>
+                <li ng-repeat-end class="session room-{{session.room}}" ng-class="{double: session.double, single: !session.double, favorite: isFav(session)}">
+                    <div class="room" ng-bind="session.room"></div>
+                    <div class="card">
+                        <a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
+                        <div class="title" ng-bind="session.name"></div>
+                        <div class="time" ng-bind="session.slot"></div>
+                        <div class="by" ng-bind="session.by"></div>
+                    </div>
+                </li>
+            </ol>
+            <table class="sessiontable">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th ng-repeat="room in rooms" ng-bind="room"></th>
+                    <th>Favorite</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat-start="time in timeslots">
+                    <td ng-bind="time"></td>
+                    <td ng-repeat="room in rooms" find-session session-room="room" session-time="time" session="session" ng-class="{session: !!session, double: session.double, single: session &amp;&amp; !session.double}">
+                        <div class="session-in" ng-if="session" ng-tap>
+                            <a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
+                            <div class="title" ng-bind="session.name"></div>
+                            <div class="time" ng-bind="session.slot"></div>
+                            <div class="by" ng-bind="session.by"></div>
+                        </div>
+                    </td>
+                    <td ng-repeat="session in favorites[time]" class="session favorite" ng-class="{single: session &amp;&amp; !session.double, double: session.double}">
+                        <div class="session-in" ng-tap>
+                            <a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa fa-star"></i></a>
+                            <div class="title" ng-bind="session.name"></div>
+                            <div class="time" ng-bind="session.slot"></div>
+                            <div class="sessroom" ng-bind="session.room"></div>
+                            <div class="by" ng-bind="session.by"></div>
+                        </div>
+                    </td>
+                    <td ng-if="!favorites[time]"></td>
+                </tr>
+                <tr ng-if="time == '11:40 - 12:10'">
+                    <td>12.10 - 13.00</td>
+                    <td class="break" colspan="{{rooms.length+1}}">Lunch</td>
+                </tr>
+                <tr ng-repeat-end ng-if="time == '14:30 - 15:00'">
+                    <td>15.00 - 15.20</td>
+                    <td class="break" colspan="{{rooms.length+1}}">Break</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <ul>
+                <li>Sessions are posted and voted during the opening hours.</li>
+                <li>Session can be in Thai or English.</li>
+                <li>17201 is the auditorium on the 2nd floor, 17302-17304 are small classrooms on 3rd floor and 17401-17402 are large classrooms on 4th floor.</li>
+                <li>Press <div class="fa fa-star-o"></div> to add session to favorite. Press again to remove. Favorite sessions are stored locally only.</li>
+            </ul>
+        </div>
+    </div>
+</section>
