@@ -409,6 +409,10 @@ img {
     .sponsor .gold img {
         max-height: 200px;
     }
+
+    .sponsor .silver img {
+        max-height: 150px;
+    }
 }
 
 .sponsor .computer-eng {
