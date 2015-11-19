@@ -15,7 +15,8 @@
             'controller.resend',
             'controller.session',
             'directive.validation',
-            'directive.interestValidation'
+            'directive.interestValidation',
+            'directive.findSession'
             // 'directive.navbar'
         ])
 })()

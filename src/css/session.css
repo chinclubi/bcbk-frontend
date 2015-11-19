@@ -1,0 +1,145 @@
+.session-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.session .time::before {
+    content: "(";
+}
+
+.session .time::after {
+    content: ")";
+}
+
+.session .by::before {
+    content: "by ";
+    font-size: 80%;
+}
+
+.session-list .fav {
+    font-size: 16pt;
+}
+
+.session {
+    /*border-bottom: #ccc solid 1px;*/
+    padding: 10px;
+}
+
+.session .room {
+    width: 100px;
+    float: left;
+}
+
+.session .card {
+    padding-left: 100px;
+}
+
+.session .title {
+    font-size: 16pt;
+    letter-spacing: -0.5px;
+}
+
+.session.single .time {
+    display: none;
+}
+
+.session .time {
+    display: inline;
+    color: #555;
+}
+
+.session .by {
+    display: inline;
+}
+
+.session-table {
+    width: 100%;
+    /*border-collapse: collapse;*/
+}
+
+.session-table th {
+    /*background: #6AFF72;*/
+}
+
+.session-table td, .session-table th {
+    /*border: #aaa solid 1px;*/
+    /*width: 14.29%;*/
+    width: 12.5%;
+    box-sizing: border-box;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.session-table td {
+    /*height: 100px;*/
+}
+
+.session-table .title {
+    font-size: 12pt;
+}
+
+.session-table .break {
+    text-align: center;
+    /*height: 50px;*/
+    vertical-align: middle;
+    font-size: 18pt;
+}
+
+.session-table .session {
+    position: relative;
+    padding: 0;
+    height: 101px;
+}
+
+.session-table .session-in {
+    /*background: #D0FFB1;*/
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    /*position: absolute;*/
+    min-height: 101px;
+    /*height: 101px;*/
+    /*overflow: hidden;*/
+    /*z-index: 10;*/
+    /*border-bottom: #aaa solid 1px;*/
+    word-wrap: break-word;
+}
+
+.session-table .session-in:hover, .session-table .session-in.active {
+    /*overflow: visible;*/
+    /*height: auto;*/
+    /*z-index: 100;*/
+    /*word-wrap: break-word;*/
+}
+
+.session-table .session.double .session-in {
+    /*min-height: 202px;*/
+}
+
+.session-table .time {
+    font-size: 80%;
+    display: block;
+}
+
+.fav {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: #70584b;
+    text-decoration: none;
+}
+
+.fav:hover {
+    color: #b5d6aa;
+}
+
+.session-timetable .favorite {
+    /*color: #e8e8e8;*/
+    /*background-color: rgba(181, 214, 170, 0.28);*/
+    /*background-color: #b5d6aa;*/
+}
+
+.favorite .session-in {
+    /*background-color: #FBFF9E;*/
+}
