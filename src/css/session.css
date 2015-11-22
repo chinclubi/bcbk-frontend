@@ -4,6 +4,26 @@
     margin: 0;
 }
 
+.session-list .session {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: #e8e8e8;
+}
+
+.time-section {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: #f4f1e2;
+    text-align: center;
+    font-size: 16pt;
+    padding: 10px 0;
+}
+
+.session-list .favorite {
+    color: #e8e8e8;
+    background-color: rgba(181, 214, 170, 0.28);
+}
+
 .session .time::before {
     content: "(";
 }
@@ -135,8 +155,8 @@
 }
 
 .session-timetable .favorite {
-    /*color: #e8e8e8;*/
-    /*background-color: rgba(181, 214, 170, 0.28);*/
+    color: #e8e8e8;
+    background-color: rgba(181, 214, 170, 0.28);
     /*background-color: #b5d6aa;*/
 }
 

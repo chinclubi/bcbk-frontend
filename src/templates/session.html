@@ -75,7 +75,7 @@
             <li class="announce" ng-show="changed &amp;&amp; session.slot == '15:20 - 15:50'">15.00 - 15.20 :
                 Break
             </li>
-            <li class="timesection" ng-show="changed">{{session.slot}}</li>
+            <li class="time-section" ng-show="changed">{{session.slot}}</li>
             <li ng-repeat-end class="session room-{{session.room}}"
                 ng-class="{double: session.double, single: !session.double, favorite: isFav(session)}">
                 <div class="room" ng-bind="session.room"></div>
