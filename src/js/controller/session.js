@@ -32,7 +32,7 @@
             '11:10 - 11:35',
             '11:40 - 12:05',
             '13:00 - 13:25',
-            '13:30 - 13.55',
+            '13:30 - 13:55',
             '14:00 - 14:25',
             '14:30 - 14:55',
             '15:20 - 15:45',
@@ -47,7 +47,7 @@
         var refreshFav = function () {
             angular.forEach($scope.favorites, function (val, key) {
                 if (val.length > 0) {
-                    var id = val[0].id
+                    var id = val[0].id;
                     var session = $scope.sessions.filter(function (x) {
                         return x.id === id;
                     });

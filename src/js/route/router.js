@@ -42,11 +42,11 @@
             //    controller: 'AboutController',
             //    controllerAs: 'AboutCtrl'
             //})
-            //.state('session', {
-            //    url: '/session',
-            //    templateUrl: 'templates/session.html',
-            //    controller: 'SessionController',
-            //    controllerAs: 'SessionCtrl'
-            //})
+            .state('session', {
+                url: '/session',
+                templateUrl: 'templates/session.html',
+                controller: 'SessionController',
+                controllerAs: 'SessionCtrl'
+            })
     }
 })()
