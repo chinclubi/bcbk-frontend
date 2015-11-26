@@ -51,7 +51,7 @@
         })
       })
     }
-    $http.get('http://api.barcampbangkhen.org/all').success(function (response) {
+    $http.get('./member.json').success(function (response) {
       self.interests = []
       var data = response.data.reverse()
       data = data.map(function (person) {
